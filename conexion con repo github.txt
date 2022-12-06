@@ -1,0 +1,17 @@
+mtrav@DESKTOP-MT7U1FK MINGW64 ~/OneDrive/Escritorio/DH/Proyecto integrador
+$ git init
+Initialized empty Git repository in C:/Users/mtrav/OneDrive/Escritorio/DH/Proyecto integrador/.git/
+
+mtrav@DESKTOP-MT7U1FK MINGW64 ~/OneDrive/Escritorio/DH/Proyecto integrador (master)
+$ git remote add origin https://github.com/M-Traverso/cebramahome-deco.git
+
+mtrav@DESKTOP-MT7U1FK MINGW64 ~/OneDrive/Escritorio/DH/Proyecto integrador (master)
+$ git pull origin main
+From https://github.com/M-Traverso/cebramahome-deco
+ * branch            main       -> FETCH_HEAD
+
+mtrav@DESKTOP-MT7U1FK MINGW64 ~/OneDrive/Escritorio/DH/Proyecto integrador (master)
+$ git branch -m main
+
+mtrav@DESKTOP-MT7U1FK MINGW64 ~/OneDrive/Escritorio/DH/Proyecto integrador (main)
+
