@@ -16,3 +16,7 @@ indicando brevemente por qué fueron elegidos:
 ● Por los clientes a los que apuntan.
 ● Por la estética que presentan.
 ● Por las funcionalidades implementadas.
+
+Morph: https://www.morph.com.ar/?gclid=Cj0KCQiA7bucBhCeARIsAIOwr--JsrSOPp36hSxOACS2V7YgHA5uKko6bEZQ3G1cDVYJwnu8P3uywkAaAklxEALw_wcB
+
+Bazar al cubo: https://www.bazaralcubo.com.ar/
