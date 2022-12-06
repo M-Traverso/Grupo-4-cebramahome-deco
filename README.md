@@ -9,6 +9,8 @@ Brian te dejo esta parte que sos el dueño del lugar jaja...
 
 Manuel Traverso: soy economista de la UBA, trabaje en Ford como pasante en el area de proyectos de inversion, en lenovo como analista en el area de reporting y me pase a la industria tech donde trabaje en el area de bussiness development en Shopee (marketplace lider del Sudeste Aasiatico), hoy por hoy me encuentro formandome como developer y ya buscando algun puesto avocado a la programacion.
 
+Hania Guerra: soy licenciada en nutricion, soy emprendedora tengo una food trailer donde se vende nieves, productos americanos, frituras. Nunca he trabajado en algo que tenga que ver con programación soy nueva en esto pero me gusta aprender y quiero trabajar de esto.
+
 En el README.md agregar un listado de al menos 5 sitios de referencia
 indicando brevemente por qué fueron elegidos:
 
@@ -18,5 +20,5 @@ indicando brevemente por qué fueron elegidos:
 ● Por las funcionalidades implementadas.
 
 Morph: https://www.morph.com.ar/?gclid=Cj0KCQiA7bucBhCeARIsAIOwr--JsrSOPp36hSxOACS2V7YgHA5uKko6bEZQ3G1cDVYJwnu8P3uywkAaAklxEALw_wcB
-
+https://www.betterware.com.mx/mx/es/
 Bazar al cubo: https://www.bazaralcubo.com.ar/
