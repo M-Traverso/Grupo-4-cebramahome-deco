@@ -6,23 +6,22 @@
 
 body {
     border: solid 1px black;
-    width: 70vw;
-    margin: 30px;
     font-family: 'Roboto', sans-serif;
 }
 
-footer {
+header {
     background-color: #FAE5D3;
+    width: 100%;
 }
 
-.sectiondelfooter {
+.sectiondelheader {
     padding: 20px;
     text-align: left;
 
 
 }
 
-.sectiondelfooter i {
+.sectiondelheader i {
     font-size: 12px;
     padding: 10px;
     border-bottom: 1px solid black;
@@ -44,6 +43,9 @@ main section {
 section div {
     margin-bottom: 10px;
 }
+div label{
+    display: block;
+}
 
 .input {
     width: 90%;
@@ -52,7 +54,7 @@ section div {
     margin-top: 20px;
 }
 
-.divconboton a {
+.divconboton button {
     border: 1px solid black;
     padding: 6px;
     text-decoration: none;
