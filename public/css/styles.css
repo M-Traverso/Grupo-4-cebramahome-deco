@@ -24,24 +24,33 @@ body {
 }
 
 .logo {
-    width: 11vw;
+    width: 15vw;
     padding: 0px;
     margin: 5px;
     border-radius: 400px;
 }
+.searchbar{
+      width: 49vw;
+      font-size: 19px;
+}
 
 .input {
-    width: 48vw
+    width: 89%;
+    height: 3vh;
+    
 }
 
 .iforinput {
     width: 4vw;
     background-color: grey;
     height: 2vh;
-    padding: 1px;
-    margin: auto;
+    padding-top: 2px;
+   margin-left: -4px;
     text-align: center;
     font-size: 9px;
+}
+.div-delheader{
+    width: 45vw;
 }
 
 .header-nav {
@@ -204,6 +213,7 @@ footer {
 .sectiondelfooter-2 {
     width: 50vw;
     margin-top: 13px;
+    margin-left: 10px;
 }
 
 .divprincipal {
@@ -227,7 +237,7 @@ footer {
 }
 
 .divconh5ydiv {
-    display: flex;
+    display: none;
     margin-bottom: 13px;
 }
 
@@ -239,6 +249,8 @@ footer {
 @media (min-width:600px) {
     .iforinput {
         padding: 3px;
+        font-size: 14px;
+        height: 20px;
     }
 
     .header-nav a {
@@ -283,6 +295,9 @@ footer {
     }
     footer{
         font-size: 13px;
+    }
+    .divconh5ydiv{
+        display: flex;
     }
 
 }
