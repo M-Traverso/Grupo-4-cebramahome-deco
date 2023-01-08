@@ -21,20 +21,17 @@
         </section>
     </header>
     <main>
-        <section class="login-box">
-            <div class="searchbar">
-                <h2>Ingresar el sitio</h2>
-
-                <label for="email"></label>
-                <input type="text" id="email" placeholder="ingrese su email" class="emailbar">
+        <form action="/crear-producto" method="POST" class="create-form">
+            <div class="control-form">
+                <label>Ingresa tu usuario:</label>
+                <input type="text" name="nombre" class="control"></input>
             </div>
-            
-            <div class="searchbar">
-                <label for="contraseña"></label>
-                <input type="text" id="contraseña" placeholder="ingrese su contraseña" class="passwordbar">
+            <div class="control-form">
+                <label>Ingresa tu contraseña</label>
+                <input type="text" name="precio" class="control"></input>
             </div>
-
-        </section>
+            <button type="submit" class="button-login">Ingresar</button>
+        </form>    
     </main>
      <footer>
         <section class="sectiondelfooter-1">
