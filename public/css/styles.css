@@ -1,14 +1,19 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0%;
+    margin: 0;
 }
-html{
+/* html{
     width: 100%;
-}
+} */
 
 body {
     font-family: 'Roboto', sans-serif;
+    width: 100vw;
+}
+
+main{
+    padding: 7px;
 }
 
 .header {

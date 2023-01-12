@@ -1,0 +1,56 @@
+.box-cart{
+    background-color: #FAE5D3;
+    border: solid 1px grey;
+    width: 40vw;
+    padding: 5px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.product-list-header{
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px grey;
+
+}
+
+h3{
+    display: block;
+}
+
+.product-list{
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px grey;
+    margin: 5px 0;
+}
+
+.product-list-discounts, .product-list-total {
+    list-style: none;
+}
+
+.buy-button{
+    background-color: #9B7E68;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.total-amount{
+    background-color: #9B7E68;
+    text-align: center;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px;
+    width: 5vw;
+    border: solid 1px black;
+    border-radius: 4px;
+}
+
+
+
+
