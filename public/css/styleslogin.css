@@ -69,23 +69,10 @@ body{
     
 }
 
-.create-form{
-
-}
 
 .control{
     padding: 5px;
     font-size: 8px;
-}
-
-.button{
-    background-color: #1259c3;
-    border: none;
-    font-size: 12px;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 5px;
 }
 
 .button-login{
