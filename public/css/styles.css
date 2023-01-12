@@ -1,19 +1,11 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin: 0%;
 }
-/* html{
-    width: 100%;
-} */
 
 body {
     font-family: 'Roboto', sans-serif;
-    width: 100vw;
-}
-
-main{
-    padding: 7px;
 }
 
 .header {
@@ -184,6 +176,14 @@ main {
     text-decoration: none;
     color:black;
 }
+.imgarticle {
+    background-color: transparent;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+
+}
+
 
 .secctionsconarticles img {
     width: 20vw;
@@ -191,7 +191,8 @@ main {
 
 .secctionsconarticles {
     font-size: 10px;
-    display: inline;
+    display: inline-grid;
+    width: 100%;
 }
 .headerdelsectiondelmain h2{
     transition: all 1000ms;
@@ -337,19 +338,12 @@ footer {
     }
 
     .secctionsconarticles {
-        position: relative;
-        top: -10vw;
-        left: 33vw;
+       width: 40%;
         font-size: 20px;
     }
 
     .divparaflex {
         width: 65vw;
-    }
-
-    .masproductos {
-        position: relative;
-        right: 19vw;
     }
 
     footer {
