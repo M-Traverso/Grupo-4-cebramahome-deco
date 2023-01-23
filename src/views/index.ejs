@@ -16,27 +16,10 @@
 </head>
 
 <body>
-    <header class="header">
-        <section class="header-section">
+    <!-- Header Section -->
 
-            <img src="/img/logo-cebrama.jpeg" class="logo">
-            <form class="searchbar">
-                <label for="search"></label>
-                <input type="text" id="search" placeholder="buscar..." class="input">
-                <i class="fa-solid fa-magnifying-glass iforinput"></i>
-            </form>
-            <div class="div-delheader">
-                <nav class="header-nav">
-                    <ul>
-                        <li><a href="./login.html">inicio seción <i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="./register.html">registro <i class="fa-regular fa-chevron-down"></i></a></li>
-                        <li><a href="./cart.html">carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
-                    </ul>
-                </nav>
-            </div>
+    <%- include('./partials/headerSection')  %>
 
-        </section>
-    </header>
     <main>
         <section class="secctionconsearchnav">
             <header class="headerdelsection">
@@ -244,43 +227,11 @@
             </div>
         </section>
     </main>
-    <footer>
-        <section class="sectiondelfooter-1">
-            <div class="divprincipal">
-                <div class="divdelprincipal-1">
-                    <h5>contactanos en </h5>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-facebook"></i>
-                </div>
-                <div class="divdelprincipal-2">
-                    <h5>encontranos en </h5>
-                    <a href="https://www.instagram.com/cebramahomedeco/" target="_blank">instagram</a>
-                    <a href="https://www.facebook.com/profile.php?id=100064641580999" target="_blank">facebook</a>
-                </div>
-            </div>
 
-        </section>
-        <section class="sectiondelfooter-2">
-            <div class="divconh5ydiv">
-                <h5>añada una alerta para nuevos productos :</h5>
-                <div class="searchbarfooter">
-                    <label for="email"></label>
-                    <input type="email" id="email" placeholder="email" class="emailbar">
-                </div>
-            </div>
-            <div class="aboutus-box">
-                <h5>sobre nosotros:</h5>
-                <p>
-                    Nos destacamos por el diseño y la calidad en el servicio. <br> Buscamos la mejora continua en todas
-                    nuestras áreas con el fin de brindar la mejor atención a <br> nuestros clientes, bajo la premisa de
-                    ofrecer los mejores productos al mejor precio. Somos un equipo de <br> personas que trabajan día a
-                    día para cumplir con la ardua tarea de distribución, diseño y abastecimiento <br> de artículos que
-                    se adapten a las nuevas demandas del mercado, manteniendo la originalidad y <br> calidad de los
-                    mismos.
-                </p>
-            </div>
-        </section>
-    </footer>
+    <!-- Footer Section -->
+
+    <%- include('./partials/footerSection')  %>
+
 </body>
 
 </html>
