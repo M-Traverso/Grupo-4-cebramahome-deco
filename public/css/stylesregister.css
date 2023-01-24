@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+body {
+    border: solid 1px black;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #FAE5D3;
+    width: 100%;
+}
+
+.sectiondelheader {
+    padding: 20px;
+    text-align: left;
+
+
+}
+
+.sectiondelheader i {
+    font-size: 12px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+main {
+    background-color: #FAE5D3;
+    border: solid 1px black;
+    margin: 12px;
+    padding: 10px;
+}
+
+main section {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+section div {
+    margin-bottom: 10px;
+}
+div label{
+    display: block;
+}
+
+.input {
+    width: 90%;
+}
+.sectionconboton{
+    margin-top: 20px;
+}
+
+.divconboton button {
+    border: 1px solid black;
+    padding: 6px;
+    text-decoration: none;
+    color: black;
+    background-color: #9B7E68;
+}
+.divpararevisar a{
+    font-size: 7px;
+   
+}
+
+@media(min-width:768px){
+    .sectiondelfooter i{
+        font-size: 20px;
+    }
+    main section{
+        font-size: 20px;
+    }
+    .input{
+        font-size: 20px;
+    }
+    .divpararevisar a{
+        font-size: 15px;
+    }
+}
+@media(min-width:1500px){
+    .sectiondelfooter i{
+        font-size: 60px;
+    }
+    main section{
+        font-size: 60px;
+    }
+    .input{
+        font-size: 60px;
+    }
+    .divpararevisar a{
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesregister.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <script src="https://kit.fontawesome.com/7b924e2171.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>registro</title>
+</head>
+<body>
+    <!-- Header Section -->
+
+    <%- include('./partials/headerSection')  %>
+    
+    <main>
+        <section>
+           
+            <header>
+                <section class="sectiondelheader">
+                    <i class="fa-solid fa-user">  registrarse</i>
+                </section>
+            </header>
+
+            <form action="registro" method="post">
+                <div>
+                    <label for="usuario">Nombre de usuario:</label>
+                    <input type="text" id="usuario" placeholder="ingrese usuario" class="input">
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="ingrese su email" class="input">
+                </div>
+                <div>
+                    <label for="contraseña">contraseña :</label>
+                    <input type="password" id="contraseña" placeholder="ingrese una contraseña" class="input">
+                </div>
+                <div>
+                    <label for="repetircontraseña"> repita contraseña :</label>
+                    <input type="password" id="repetircontraseña" placeholder=" repita contraseña" class="input">
+                </div>
+                <div class="divconboton">
+                    <button type="submit"> continuar </button>
+                </div>
+            </form>
+            <div class="divpararevisar">
+                <a href="#">revise su casilla de correo electronico para terminar con el registro</a>
+            </div>
+        </section>
+        
+    </main>
+    <!-- Footer Section -->
+
+    <%- include('./partials/footerSection')  %>
+</body>
+</html>
