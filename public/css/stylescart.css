@@ -1,3 +1,7 @@
+main{
+    padding: 2px;
+}
+
 .box-cart{
     background-color: #FAE5D3;
     border: solid 1px grey;
@@ -5,7 +9,6 @@
     padding: 5px;
     margin: auto;
     position: relative;
-    margin-bottom: 5px;
 }
 
 .product-list-header{

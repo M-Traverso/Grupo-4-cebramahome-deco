@@ -26,39 +26,15 @@
                 <i class="fa-solid fa-list"> Todas las categorias</i>
             </header>
             <div class="divconnav">
-                <nav>
+                <nav>                    
                     <ul>
+                        <% for(let i=0; i < categorias.length; i++) {%>
                         <li>
-                            <a href="#">new</a>
+                            <a href="#">
+                                <%= categorias[i].categoria %>
+                            </a>
                         </li>
-                        <li>
-                            <a href="#">bazar</a>
-                        </li>
-                        <li>
-                            <a href="#">mates</a>
-                        </li>
-                        <li>
-                            <a href="#">botellas termicas</a>
-                        </li>
-                        <li>
-                            <a href="#">set de mates</a>
-                        </li>
-                        <li>
-                            <a href="#">dispenser para cocina</a>
-                        </li>
-                        <li>
-                            <a href="#">termos</a>
-                        </li>
-                        <li>
-                            <a href="#">escurridor de platos</a>
-                        </li>
-                        <li>
-                            <a href="#">carteles </a>
-                        </li>
-                        <li>
-                            <a href="#">almohadones</a>
-                        </li>
-
+                    <%}%>                      
                     </ul>
                 </nav>
                 <button type="menu"><i class="fa-solid fa-chevron-down"></i></button>
@@ -106,121 +82,27 @@
                 <h2>new</h2>
             </header>
             <div class="divparaflex">
-                <article class="articleconproductos">
+                <% for(let i=0; i < productos.length; i++) {%>
+                <article class="articleconproductos">                   
 
                     <div class="imgarticle">
-                        <img src="/img/manopla.jpeg" alt="">
+                        <img src=<%= productos[i].img %> alt="">
                     </div>
                     <div class="divcontodaladescripcion">
                         <div class="descripciondelarticle">
                             <p>
-                                <strong>manopla de silicona</strong>
+                                <strong><%= productos[i].descripcion %></strong>
                             </p>
                         </div>
                         <div class="divconprecioycarrito">
                             <p>
-                                $2800
+                                $<%= productos[i].precio %>
                             </p>
                             <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
                         </div>
                     </div>
                 </article>
-                <article class="articleconproductos">
-
-                    <div class="imgarticle">
-                        <img src="/img/mateava.jpeg" alt="">
-                    </div>
-                    <div class="divcontodaladescripcion">
-                        <div class="descripciondelarticle">
-                            <p>
-                                <strong>mate ava con tapa</strong>
-                            </p>
-                        </div>
-                        <div class="divconprecioycarrito">
-                            <p>
-                                $1350
-                            </p>
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                    </div>
-                </article>
-                <article class="articleconproductos">
-
-                    <div class="imgarticle">
-                        <img src="/img/lata.jpeg" alt="">
-                    </div>
-                    <div class="divcontodaladescripcion">
-                        <div class="descripciondelarticle">
-                            <p>
-                                <strong>lata para galletitas</strong>
-                            </p>
-                        </div>
-                        <div class="divconprecioycarrito">
-                            <p>
-                                $1800
-                            </p>
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                    </div>
-                </article>
-                <article class="articleconproductos">
-
-                    <div class="imgarticle">
-                        <img src="/img/manopla.jpeg" alt="">
-                    </div>
-                    <div class="divcontodaladescripcion">
-                        <div class="descripciondelarticle">
-                            <p>
-                                <strong>manopla de silicona</strong>
-                            </p>
-                        </div>
-                        <div class="divconprecioycarrito">
-                            <p>
-                                $2800
-                            </p>
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                    </div>
-                </article>
-                <article class="articleconproductos">
-
-                    <div class="imgarticle">
-                        <img src="/img/mateava.jpeg" alt="">
-                    </div>
-                    <div class="divcontodaladescripcion">
-                        <div class="descripciondelarticle">
-                            <p>
-                                <strong>mate ava con tapa</strong>
-                            </p>
-                        </div>
-                        <div class="divconprecioycarrito">
-                            <p>
-                                $1350
-                            </p>
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                    </div>
-                </article>
-                <article class="articleconproductos">
-
-                    <div class="imgarticle">
-                        <img src="/img/lata.jpeg" alt="">
-                    </div>
-                    <div class="divcontodaladescripcion">
-                        <div class="descripciondelarticle">
-                            <p>
-                                <strong>lata para galletitas</strong>
-                            </p>
-                        </div>
-                        <div class="divconprecioycarrito">
-                            <p>
-                                $1800
-                            </p>
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                    </div>
-                </article>
-
+            <%}%>
             </div>
             <div class="masproductos">
                 <a href="#"><i class="fa-solid fa-chevron-down"></i></a>
