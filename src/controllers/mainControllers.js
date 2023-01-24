@@ -1,5 +1,8 @@
+const categorias = require('../database/categories');
+const productos = require('../database/products');
+
 const index = (req,res) => {
-    res.render('index');
+    res.render('index',{'categorias': categorias,'productos': productos});
 };
 
 const register = (req,res) => {
