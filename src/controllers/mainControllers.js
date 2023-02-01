@@ -1,25 +1,84 @@
 const categorias = require('../database/categories');
-const productos = require('../database/products');
+const path=require('path');
+const fs = require('fs');
 
-const index = (req,res) => {
-    res.render('index',{'categorias': categorias,'productos': productos});
+const productsPath = path.join(__dirname, '../database/MOCK_DATA.json');
+const productos = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+const index = (req, res) => {
+    res.render('index', { 'categorias': categorias, 'productos': productos });
 };
 
-const register = (req,res) => {
+const register = (req, res) => {
     res.render('register');
 };
 
-const login = (req,res) => {
+const login = (req, res) => {
     res.render('login');
 };
 
-const cart = (req,res) => {
+const cart = (req, res) => {
     res.render('cart');
 };
+
+// Root - Show all products
+const allproducts = (req, res) => {
+    res.render(path.join(__dirname, ('../../views/products.ejs')), { 'productos': productos });
+}
+
+//PRODUCT DETAIL
+const productdetail = (req, res) => {
+    const { id } = req.params;
+    const oneproduct = productos.find(e => e.id == id);
+    if (oneproduct) {
+        res.render(path.join(__dirname, ('../../views/productdetail.ejs')), { oneproduct })
+    }
+}
+//PRODUCT CREATE
+const create = (req, res) => {
+    res.render(path.join(__dirname, ('../../views/productcreate.ejs')));
+}
+//PRODUCT STORE
+const store = (req, res) => {
+    if (req.file) {
+        const {
+            name,
+            price,
+            category,
+            description,
+        } = req.body;
+
+        const newId = productos[productos.length - 1].id + 1;
+        const image = req.file.filename;
+
+        const obj = {
+            id: newId,
+            name,
+            price,
+            category,
+            description,
+            image
+        };
+        if (productos == "") {
+            let productos = []
+        } else {
+            productos
+        }
+        productos.push(obj);
+        productsDataBasejson = JSON.stringify(productos);
+        fs.writeFileSync(productsPath, productsDataBasejson)
+        res.redirect('/products');
+    } else {
+        res.render(path.join(__dirname, ('../../views/productcreate.ejs')))
+    }
+}
 
 module.exports = {
     index,
     register,
     login,
-    cart
+    cart,
+    productdetail,
+    allproducts,
+    create,
+    store
 };

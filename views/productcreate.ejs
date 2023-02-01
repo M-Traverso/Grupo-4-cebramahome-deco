@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesformcreate.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/7b924e2171.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Creá tu producto</title>
+</head>
+
+<body>
+    <%- include('./partials/headerSection') %>
+        <main>
+            <section class="section-form">
+
+                <div class="header-header">
+                    <section class="section-header">
+                        <h2>Crear producto</h2>
+                    </section>
+                </div>
+                <div class="div-form">
+                    <form action="/products" method="POST" enctype="multipart/form-data">
+                        <div class="product-form">
+                            <div class="div-tranform" >
+                                <label for="name">Nombre del producto:</label>
+                                <input type="text" id="name" name="name" class="input-form">
+                            </div>
+                            <div class="div-tranform">
+                                <label for="price">Precio del producto:</label>
+                                <input type="number" id="price" name="price" class="input-form">
+                            </div>
+                            <div class="div-tranform">
+                                <label for="image">imagen :</label>
+                                <input type="file" id="image" name="image" class="input-form imputimg">
+                            </div>
+                            <div class="div-tranform" >
+                                <label for="Category">Category del producto:</label>
+                                <input type="text" id="Category" name="Category" class="input-form">
+                            </div>
+                            <div class="div-tranform">
+                                <label for="description"> descripcion :</label>
+                                <textarea name="description" id="description" class="input-form"></textarea>
+                            </div>
+                            <div class="divconboton" class="div-tranform">
+                                <button type="submit"> continuar </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+
+
+
+
+        </main>
+        <%- include('./partials/footerSection') %>
+</body>
+
+</html>

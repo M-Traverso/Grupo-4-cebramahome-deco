@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/productsstyles.css">
+    <script src="https://kit.fontawesome.com/7b924e2171.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Todos los productos</title>
+</head>
+
+<body>
+    <%- include('./partials/headerSection') %>
+        <main>
+            <section class="section-product">
+                <div class="div-todo">
+                    <div class="div-h2-main">
+                        <h2>Todos los productos</h2>
+                    </div>
+
+                    <% for(let i=0; i < productos.length; i++) {%>
+                        <article class="article-productos">
+                            <div class="infodetail">
+                                <a href="">
+                                    <figure class="imgarticle">
+                                        <img src=/img/<%=productos[i].image %> alt="">
+                                    </figure>
+                                    <div class="divcontodaladescripcion">
+                                        <h2>
+                                            <%= productos[i].name %>
+                                        </h2>
+                                    </div>
+                                    <div class="div-precio-carrito">
+                                        <p>
+                                            $<%= productos[i].price %>
+                                        </p>
+                                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                                    </div>
+                                </a>
+                            </div>
+                        </article>
+                     <%}%>
+
+                </div>
+            </section>
+
+        </main>
+
+        <%- include('./partials/footerSection') %>
+</body>
+
+</html>
