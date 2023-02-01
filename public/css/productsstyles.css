@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0%;
+}
+
+html {
+    min-height: 100vh;
+    margin: 0;
+    font-size: 10px;
+
+}
+
+body {
+    font-size: 10px;
+}
+
+.section-product {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+   
+    
+
+}
+
+.div-todo {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 15px;
+    margin-left: 15px;
+    justify-content: space-between;
+}
+
+.div-h2-main {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.div-h2-main h2 {
+    font-size: 2.4em;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.408);
+}
+
+.article-productos {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: #FAE5D3;
+    border: solid 1px;
+    margin-bottom: 30px;
+}
+
+.infodetail {
+    background-color: transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 300ms;
+    margin: 20px 0;
+}
+
+.infodetail a {
+    display: block;
+    text-decoration: none;
+    color:inherit;
+}
+
+.imgarticle img {
+    width: 70%;
+}
+
+.divcontodaladescripcion {
+    padding: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.divcontodaladescripcion h2 {
+    font-size: 2.4em;
+    font-weight: 300;
+    margin: 0;
+}
+
+.div-precio-carrito {
+    font-size: 2.4em;
+    font-weight: 300;
+    padding: 9px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-right: 21px;
+    justify-content: space-around;
+}
+
+@media (min-width:576px) {
+    .section-article {
+        max-width: 540px;
+    }
+
+    .article-productos {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+
+}
+@media (min-width:768px) {
+    .section-article {
+        max-width: 720px;
+    }
+}
+@media (min-width:1000px) {
+    .section-article {
+        max-width: 960px;
+    }
+
+    .article-productos {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+
+
+}
+@media (min-width:1200px) {
+    .section-article {
+        max-width: 1140px;
+    }
+
+   
+
+}
