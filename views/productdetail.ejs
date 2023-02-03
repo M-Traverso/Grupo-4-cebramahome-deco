@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/productdetailstyles.css">
-  <link rel="stylesheet" href="/css/normalize.css">
   <script src="https://kit.fontawesome.com/7b924e2171.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,29 +19,39 @@
   <%- include('./partials/headerSection') %>
     <main>
       <div class="div-h2-main">
-        <h2><%= oneproduct.name %>  </h2>
+        <h2>
+          <%= oneproduct.name %>
+        </h2>
       </div>
-      <section class="section-article">
-        <article class="article-product">
-          <div>
-            <img src='<%= oneproduct.image %>'  alt="" class="img-product">
-            <div>
-              <p>
-                <%= oneproduct.description %> 
-              </p>
+      <div class="div-contenedor">
+        <div class="div-contenido ">
+
+          <article class="article-product">
+            <div class="div-img-article">
+              <img src='/img/<%= oneproduct.image %>' alt="" class="img-product">
+              <div class="div-break">
+                <p>
+                  <%= oneproduct.description %>
+                </p>
+              </div>
             </div>
+          </article>
+          <div class="div-detail">
+            <h2>
+              <%= oneproduct.name%>
+            </h2>
+            <P>$<%= oneproduct.price %>
+            </P>
+            <a href="" class="button-buy">comprar</a>
+            <a href="" class="button-edit">editar</a>
+            <form action="/?_method=DELETE" method="POST" class="form-delete">
+              <button type="submit" class="button-delete">eliminar</button>
+            </form>
           </div>
-        </article>
-        <div class="div-detail">
-          <h2><%= oneproduct.name%></h2>
-          <P>$<%= oneproduct.price %> </P>
-          <a href="" class="button-buy">comprar</a>
-          <a href="" class="button-edit">editar</a>
-          <form action="/?_method=DELETE" method="POST" class="form-delete" >
-            <button type="submit" class="button-delete">eliminar</button>
-          </form>
+
         </div>
-      </section>
+      </div>
+
 
     </main>
 

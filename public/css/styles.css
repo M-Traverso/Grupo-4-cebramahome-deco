@@ -6,32 +6,68 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
 }
 
 .header {
     background-color: #FAE5D3;
 }
 
-.div-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.header-section {
-    display: flex;
-    justify-content: space-between;
+.align-items {
     align-items: center;
 }
 
+.div-contenedor {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.div-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.div-logo {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.div-form-header {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.div-ul-header {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
 .logo {
-    width: 15vw;
+    width: 100%;
     padding: 0px;
-    margin: 5px;
     border-radius: 400px;
 }
 
 .searchbar {
-    width: 43vw;
+    width: 100%;
     font-size: 19px;
     display: flex;
     align-items: center;
@@ -43,9 +79,10 @@ body {
     border: none;
     background-color: white;
     outline: none;
-    width: 90%;
+    width: 100%;
     height: 20px;
     position: relative;
+    border-radius: 6px;
 }
 
 .iforinput {
@@ -75,6 +112,7 @@ body {
     display: flex;
 }
 
+
 .header-nav a {
     text-decoration: none;
     color: #222222;
@@ -82,6 +120,11 @@ body {
     padding: 5px 0;
     font-size: 7px;
     margin: 0 1px;
+    margin-right: 15px;
+}
+
+.burguermenuparacelus {
+    margin: auto;
 }
 
 main {
@@ -89,13 +132,32 @@ main {
     position: relative;
 }
 
+.div-todo {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.div-all {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+
+
 .secctionconsearchnav {
-    font-size: 9px;
-    width: 30vw;
-    display: inline-block;
+
     margin-top: 23px;
     display: none;
     text-align: center;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+
 }
 
 .secctionconsearchnav .headerdelsection {
@@ -118,9 +180,10 @@ main {
     margin: auto;
     font-size: 7px;
 }
-.divconnav button{
+
+.divconnav button {
     background: none;
-    border:none;
+    border: none;
 }
 
 .burger-menu {
@@ -174,8 +237,9 @@ main {
 
 .flechascarrousel a {
     text-decoration: none;
-    color:black;
+    color: black;
 }
+
 .imgarticle {
     background-color: transparent;
     filter: brightness(1.1);
@@ -194,58 +258,111 @@ main {
     display: inline-grid;
     width: 100%;
 }
-.headerdelsectiondelmain h2{
-    transition: all 1000ms;
-}
-.headerdelsectiondelmain h2:hover{
-    color: #9B7E68;
+
+.headerdelsectiondelmain {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+
 }
 
-.articleconproductos {
-    border: solid 1px #9B7E68;
-    width: 21vw;
-    margin: 3px;
+.headerdelsectiondelmain h2 {
+    font-size: 2.4em;
+    transition: all 1000ms;
 }
+
+.headerdelsectiondelmain h2:hover {
+    color: #9B7E68;
+}
+.space{
+    justify-content: space-between;
+}
+
+.article-productos {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: #FAE5D3;
+    border: solid 1px;
+    margin-bottom: 30px;
+}
+
+.infodetail {
+    background-color: transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 300ms;
+    margin: 20px 0;
+}
+
+.infodetail a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+
+.imgarticle img {
+    width: 100%;
+    height: 35vh;
+}
+
 .divcontodaladescripcion {
+    padding: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     border-top: solid 1px #9B7E68;
     transition: all 1000ms;
 }
-.divcontodaladescripcion:hover{
+
+.divcontodaladescripcion:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 
-.divconprecioycarrito {
+.divcontodaladescripcion h2 {
+    font-size: 2.4em;
+    font-weight: 300;
+    margin: 0;
+}
+
+.div-precio-carrito {
+    font-size: 2.4em;
+    font-weight: 300;
+    padding: 9px;
+    position: relative;
     display: flex;
-    justify-content: center;
-    border-top: solid 1px #9B7E68;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-right: 21px;
+    justify-content: space-around;
 }
 
-.divconprecioycarrito p {
-    margin: 5px;
-}
-
-
-.divconprecioycarrito a {
+.div-precio-carrito i {
     margin: 5px;
     color: black;
     transition: all 1000ms;
 }
-.divconprecioycarrito a:hover{
-    transform:rotatez(360deg)
+
+.div-precio-carrito i :hover {
+    transform: rotatez(360deg)
 }
-.divparaflex {
-    display: flex;
-    justify-content: space-between;
-    margin-right: 20px;
-    width: 88vw;
-    flex-wrap: wrap;
-}
+
 
 .masproductos {
     text-align: center;
 }
-.masproductos a{
+
+.masproductos a {
     color: black;
 }
 
@@ -256,17 +373,22 @@ footer {
 }
 
 .sectiondelfooter-1 {
-    width: 40vw;
+    flex: 0 0 35%;
+    max-width: 35%;
+    width: 100%;
     margin-top: 13px;
-    margin-left: 13px;
+   
 }
 
 .sectiondelfooter-2 {
-    width: 50vw;
+    flex: 0 0 55%;
+    max-width: 55%;
+    width: 100%;
     margin-top: 13px;
-    margin-left: 10px;
+    margin-left: 23px;
 }
-.searchbarfooter{
+
+.searchbarfooter {
     margin-left: 10px;
 }
 
@@ -301,6 +423,14 @@ footer {
 }
 
 @media (min-width:600px) {
+    .div-contenedor {
+        max-width: 540px;
+    }
+
+    .div-todo {
+        max-width: 540px;
+    }
+
     .iforinput {
         padding: 3px;
         font-size: 14px;
@@ -331,20 +461,19 @@ footer {
     }
 
     .sectionmainconcarrousel {
-        width: 65vw;
-        position: absolute;
-        top: 25px;
+
+        position: relative;
         padding-top: 20px;
     }
 
-    .secctionsconarticles {
-       width: 40%;
-        font-size: 20px;
+    .article-productos {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+    .imgarticle img{
+        height: 13vh;
     }
 
-    .divparaflex {
-        width: 65vw;
-    }
 
     footer {
         font-size: 13px;
@@ -356,18 +485,51 @@ footer {
 
 }
 
-@media (min-width:1100px) {
-    body {
-        max-width: 100%;
+@media (min-width:768px) {
+    .div-contenedor {
+        max-width: 720px;
+    }
+
+
+    .input {
+        height: 44px;
+    }
+
+    .div-todo {
+        max-width: 720px;
+    }
+    .imgarticle img{
+        height: 13vh;
+    }
+}
+
+@media (min-width:1000px) {
+    .div-logo {
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+
+    .div-form-header {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .div-ul-header {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    .div-contenedor {
+        max-width: 960px;
+    }
+
+    .div-todo {
+        max-width: 960px;
     }
 
     .logo {
-        width: 12vw;
-        margin: 14px;
-    }
+        width: 100%;
 
-    .input {
-        height: 3vh;
     }
 
     .iforinput {
@@ -383,7 +545,7 @@ footer {
     }
 
     .header-nav a {
-        font-size: 19px;
+        font-size: 11px;
     }
 
     .secctionconsearchnav nav {
@@ -396,14 +558,18 @@ footer {
 
 
     .sectionmainconcarrousel {
-        height: 16vh;
+
         padding-top: 25px;
         margin-left: 10px;
     }
 
-    .secctionsconarticles {
-        top: -13vw;
-        font-size: 20px;
+
+    .article-productos {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .space{
+        justify-content: center;
     }
 
     footer {
