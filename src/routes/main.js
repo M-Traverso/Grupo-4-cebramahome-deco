@@ -33,7 +33,7 @@ routerMain.get('/products', allproducts);
 routerMain.get('/products/create', create);
 routerMain.post('/products',upload.single('image'), store);
 
-routerMain.get('/products/edit/:id', edit);
+routerMain.get('/products/:id/edit', edit);
 routerMain.put('/products/:id', update);
 
 routerMain.delete('/products/:id', destroy); 

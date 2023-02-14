@@ -7,6 +7,7 @@ const port = process.env.PORT || 8080;
 
 const app= express();
 
+app.use(express.urlencoded({extended:false}));
 app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.static('public'));

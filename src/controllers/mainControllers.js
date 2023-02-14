@@ -78,22 +78,27 @@ const edit = (req, res) => {
 
     const productToEdit = productos.find(elem => elem.id == id);
 
-    res.render(path.join(__dirname,'../../views/product-edit-form'),{productToEdit})
+    res.render(path.join(__dirname,'../../views/product-edit-form'),{'productos': productToEdit})
+
 };
 
 const update = (req, res) => {
 
+    
+
     productos.forEach(elem => {
-        if(elem.id == req.body.id){
+
+        if (elem.id == req.body.id) {
             elem.name = req.body.name;
             elem.price = req.body.price;
-            elem.category = req.body.category;
             elem.description = req.body.description;
-        }
+            elem.Category = req.body.Category
+        }        
     });
 
-    res.redirect('/products');    
-};
+    res.redirect('/products');
+}
+
 
 const destroy = (req, res) => {
     res.send('Hola soy delete');
