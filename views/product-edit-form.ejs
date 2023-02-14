@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesformcreate.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/7b924e2171.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Creá tu producto</title>
+</head>
+
+<body>
+    <%- include('./partials/headerSection') %>
+        <main>
+            <section class="section-form">
+            <div class="container products-wrapper">
+                <div class="row">
+                    <div class="header-header">
+                        <h2 class="products-title">Estás editando: <i> <%= productToEdit.name %> </i></h2>
+                    </div>
+                </div>
+                <div class="div-form">
+                    <form action="/products/edit/?_method=PUT" method="POST">
+                        <div class="product-form">
+                            <div class="div-tranform">
+                                <label for="name" class="form-label">Id:</label>
+                                <input type="text" id="name" name="name" class="input-form" readonly="true" value="<%= productToEdit.id %>">
+                            </div>
+                            <div class="div-tranform">
+                                <label for="name" class="form-label">Nombre del producto:</label>
+                                <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="input-form">
+                            </div>
+                            <div class="div-tranform">
+                                <label for="price" class="form-label">Precio del producto:</label>
+                                <input type="text" id="price" name="price" placeholder="Ej: 5678" class="input-form">
+                            </div>
+                            <div class="div-tranform">
+                                <label for="category" class="form-label">Categoría:</label>
+                                <select name="category" id="category" class="input-form">
+                                    <option value="">Elegí</option>
+                                    <option value="in-sale">Nuevo</option>
+                                    <option value="visited" >Bazar</option>
+                                    <option value="visited" >Otros</option>
+                                </select>
+                            </div>
+                            <div class="div-tranform">
+                                <label for="description" class="form-label">Descripción:</label>
+                                <textarea name="description" id="description" class="input-form"><%= productToEdit.description %></textarea>
+                            </div>
+                            <div class="divconboton" class="div-tranform">
+                                <button type="submit">Guardar producto</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        
+            </div>
+        </section>
+
+        </main>
+        <%- include('./partials/footerSection') %>
+</body>
+
+</html>

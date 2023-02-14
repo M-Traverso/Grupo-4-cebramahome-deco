@@ -1,7 +1,7 @@
 const express = require('express');
 const multer= require('multer')
 const path= require('path')
-const{index, register, login, cart,productdetail,allproducts,create,store} = require('../controllers/mainControllers');
+const{index, register, login, cart,productdetail,allproducts,create,store,edit,update,destroy} = require('../controllers/mainControllers');
 //configurando storage
 const storage= multer.diskStorage({
     destination: (req, file, callback) => {
@@ -26,13 +26,16 @@ routerMain.get('/login', login);
 
 routerMain.get('/cart', cart);
 
-routerMain.get('/product/:id', productdetail);
+routerMain.get('/products/:id', productdetail);
 
 routerMain.get('/products', allproducts);
 
 routerMain.get('/products/create', create);
 routerMain.post('/products',upload.single('image'), store);
 
+routerMain.get('/products/edit/:id', edit);
+routerMain.put('/products/edit', update);
 
+routerMain.delete('/products/:id', destroy); 
 
 module.exports = routerMain;

@@ -4,6 +4,7 @@ const fs = require('fs');
 
 const productsPath = path.join(__dirname, '../database/MOCK_DATA.json');
 const productos = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+
 const index = (req, res) => {
     res.render('index', { 'categorias': categorias, 'productos': productos });
 };
@@ -72,6 +73,30 @@ const store = (req, res) => {
     }
 }
 
+const edit = (req, res) => {
+    const { id } = req.params;
+
+    const productToEdit = productos.find(elem => elem.id == id);
+
+    res.render(path.join(__dirname,'../../views/product-edit-form'),{productToEdit})
+};
+
+const update = (req, res) => {
+    productos.forEach(elem => {
+        if(elem.id == req.body.id){
+            elem.name = req.body.name;
+            elem.price = req.body.price;
+            elem.description = req.body.description;
+        }
+    });
+
+    res.redirect('/products');    
+};
+
+const destroy = (req, res) => {
+    res.send('Hola soy delete');
+}
+
 module.exports = {
     index,
     register,
@@ -80,5 +105,8 @@ module.exports = {
     productdetail,
     allproducts,
     create,
-    store
+    store,
+    edit,
+    update,
+    destroy
 };
