@@ -44,7 +44,7 @@
             </P>
             <a href="" class="button-buy">comprar</a>
             <a href="/products/edit/<%= oneproduct.id %>" method="GET" class="button-edit">editar</a>
-            <form action="/products/<%= oneproduct.id %>/?_method=DELETE" method="POST" class="form-delete">
+            <form action="/products/<%= oneproduct.id %>?_method=DELETE" method="POST" class="form-delete">
               <button type="submit" class="button-delete">eliminar</button>
             </form>
           </div>

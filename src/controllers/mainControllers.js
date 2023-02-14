@@ -82,10 +82,12 @@ const edit = (req, res) => {
 };
 
 const update = (req, res) => {
+
     productos.forEach(elem => {
         if(elem.id == req.body.id){
             elem.name = req.body.name;
             elem.price = req.body.price;
+            elem.category = req.body.category;
             elem.description = req.body.description;
         }
     });

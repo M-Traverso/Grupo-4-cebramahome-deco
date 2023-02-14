@@ -26,7 +26,7 @@ routerMain.get('/login', login);
 
 routerMain.get('/cart', cart);
 
-routerMain.get('/products/:id', productdetail);
+routerMain.get('/product/:id', productdetail);
 
 routerMain.get('/products', allproducts);
 
@@ -34,7 +34,7 @@ routerMain.get('/products/create', create);
 routerMain.post('/products',upload.single('image'), store);
 
 routerMain.get('/products/edit/:id', edit);
-routerMain.put('/products/edit', update);
+routerMain.put('/products/:id', update);
 
 routerMain.delete('/products/:id', destroy); 
 

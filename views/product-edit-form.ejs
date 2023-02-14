@@ -25,28 +25,23 @@
                     </div>
                 </div>
                 <div class="div-form">
-                    <form action="/products/edit/?_method=PUT" method="POST">
+                    <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST">
                         <div class="product-form">
                             <div class="div-tranform">
-                                <label for="name" class="form-label">Id:</label>
-                                <input type="text" id="name" name="name" class="input-form" readonly="true" value="<%= productToEdit.id %>">
+                                <label for="id" class="form-label">Id:</label>
+                                <input type="text" id="id" name="id" class="input-form" readonly="true" value="<%= productToEdit.id %>">
                             </div>
                             <div class="div-tranform">
                                 <label for="name" class="form-label">Nombre del producto:</label>
-                                <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="input-form">
+                                <input type="text" id="name" name="name" class="input-form" value="<%= productToEdit.name %>">
                             </div>
                             <div class="div-tranform">
                                 <label for="price" class="form-label">Precio del producto:</label>
-                                <input type="text" id="price" name="price" placeholder="Ej: 5678" class="input-form">
+                                <input type="text" id="price" name="price" class="input-form" value="<%= productToEdit.price %>">
                             </div>
                             <div class="div-tranform">
                                 <label for="category" class="form-label">Categoría:</label>
-                                <select name="category" id="category" class="input-form">
-                                    <option value="">Elegí</option>
-                                    <option value="in-sale">Nuevo</option>
-                                    <option value="visited" >Bazar</option>
-                                    <option value="visited" >Otros</option>
-                                </select>
+                                <input type="text" id="category" name="category" class="input-form" value="<%= productToEdit.category %>">
                             </div>
                             <div class="div-tranform">
                                 <label for="description" class="form-label">Descripción:</label>
