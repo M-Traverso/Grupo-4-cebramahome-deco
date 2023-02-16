@@ -5,6 +5,12 @@ const fs = require('fs');
 const productsPath = path.join(__dirname, '../database/MOCK_DATA.json');
 const productos = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
+// HOME
+
+const index = (req, res) => {
+    res.render('index', { 'categorias': categorias, 'productos': productos });
+};
+
 // Root - Show all products
 const allproducts = (req, res) => {
     res.render(path.join(__dirname, ('../../views/products.ejs')), { 'productos': productos });
@@ -93,6 +99,7 @@ const destroy = (req, res) => {
 }
 
 module.exports = {
+    index,
     productdetail,
     allproducts,
     create,

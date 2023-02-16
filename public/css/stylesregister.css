@@ -65,6 +65,9 @@ div label{
     font-size: 7px;
    
 }
+.tomato{
+    color: tomato;
+}
 
 @media(min-width:768px){
     .sectiondelfooter i{
