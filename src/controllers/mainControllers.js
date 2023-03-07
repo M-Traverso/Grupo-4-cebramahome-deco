@@ -1,6 +1,7 @@
 const categorias = require('../database/categories');
 const path=require('path');
 const fs = require('fs');
+const Product = require('../../models/Products');
 
 const productsPath = path.join(__dirname, '../database/MOCK_DATA.json');
 let productos = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
@@ -88,6 +89,8 @@ const update = (req, res) => {
         }        
     });
 
+    fs.writeFileSync(Product.fileName, JSON.stringify(productos,null,' '));
+
     res.redirect('/products');
 }
 
@@ -97,7 +100,15 @@ const update = (req, res) => {
 const destroy = (req, res) => {
     const {id} = req.params;
 
-    productos = productos.filter(elem => elem.id != id);
+    deleteProduct = productos.filter(elem => elem.id == id);
+
+    productos = productos.filter(elem => elem.id != id);    
+
+    console.log(deleteProduct);
+
+    fs.writeFileSync(Product.fileName, JSON.stringify(productos,null,' '));
+
+    fs.appendFileSync(path.join(__dirname,('../database/DELETED_PRODUCTS.json')), JSON.stringify(deleteProduct,null,' '));
 
     res.redirect('/products');
 }
