@@ -11,6 +11,7 @@ const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 
 function userlogged(req,res,next){
 
+    res.locals.isLogged = false;
 
     let findByfield = function (field, text) {
         let allusers = users
@@ -26,6 +27,10 @@ function userlogged(req,res,next){
         req.session.userlogged=userFromCookie
     }
 
+    if(req.session.userLogged){
+        res.locals.isLogged = true;
+        res.locals.userLogged = req.session.userLogged;
+    }
 
     
 

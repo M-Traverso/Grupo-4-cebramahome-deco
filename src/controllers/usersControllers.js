@@ -3,9 +3,10 @@ const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-
+const User = require('../../models/Users');
 const usersPath = path.join(__dirname, '../database/USERS_DATA.json');
 const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
+const bcryptjs = require('bcryptjs');
 
 
 
@@ -76,16 +77,41 @@ const login = (req, res) => {
 
 // LOGIN POST
 
-const loginpost = (req, res) => {
+const loginpost= (req,res) => {
+    let userToLogin = User.findByField('email', req.body.email);
+    
+    if(userToLogin){
 
-    //una vez que validas que el usuario esta logueado ,esto hacelo con una constante
-    //userTologin ahi pones el codigo este que pongo abajo
-    req.session.userLogged = userTologin;
-    if (req.body.recuerdo) {
-        res.cookie('useremail', req.body.email, { maxAge: (1000 * 60) * 2 })
+        let isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+        if (isOkPassword){
+            delete userToLogin.password;
+            req.session.userLogged = userToLogin;
+
+            if(req.body.recuerdo) {
+                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2})                
+            }
+
+            res.redirect('/');
+        }
+        return res.render('login',{
+            errors: {
+                email: {
+                    msg:'Las credenciales son invalidas'
+                }              
+            }
+    
+        });
     }
-};
 
+    return res.render('login',{
+        errors: {
+            email: {
+                msg: 'Debes registrarte antes de loguearte'
+            }
+        }
+
+    });
+};
 
 // PURCHASE CART
 
@@ -93,10 +119,19 @@ const cart = (req, res) => {
     res.render('cart');
 };
 
+// Logout
+
+const logout = (req, res) => {
+    res.clearCookie('userEmail');
+    req.session.destroy();
+    return res.redirect('/login');
+}
+
 module.exports = {
     register,
     login,
     cart,
     registerpost,
-    loginpost
+    loginpost,
+    logout
 }
