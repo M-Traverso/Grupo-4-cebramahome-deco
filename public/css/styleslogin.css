@@ -2,42 +2,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-header {
-    background-color: #FAE5D3;
-    width: 100%;
-    height: 20vw;
-    max-height: 200px;
-}
-
-.box-articles{
-    display: flex;
-    width: 40%;
-    min-width: 250px;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-}
-
-.articles{
-    display: block;
-    padding: 1px;
-    width: 30%;
-    background-color: transparent;
-    filter: brightness(1.1);
-    mix-blend-mode:multiply;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
-.articles:hover{
-    box-shadow: 3px 1px 3px 1px grey;
-    transform: scale(1.2,1.2);
-}
-
 main {
     background-color: #F9EBEA;
-    height: 50vw;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 h2{
@@ -53,15 +23,13 @@ h2{
     text-align: center;
     display: block;
     padding: 12px;
-    width: 62vw;
-    height: 62vh;
     margin: auto;
     font-size: 8px;
     margin-bottom: 3px;
     box-shadow: 0px 0px 7px rgb(105, 105, 105);
-    position: absolute;
     top: 20vh;
     left: 27.5vw;
+    border-radius: 400px;
 }
 
 body{
@@ -112,77 +80,21 @@ label{
     position: relative;
 }
 
-footer {
-    font-size: 7px;
-    background-color: #9B7E68;
-    display: flex;
-    height: 30vw;
-    max-height: 200px;
-}
-
-.sectiondelfooter-1 {
-    width: 40vw;
-    margin-top: 13px;
-    margin-left: 13px;
-}
-
-.sectiondelfooter-2 {
-    width: 50vw;
-    margin-top: 10px;
-}
-
-.searchbar{
-    align-self: center;
-}
-
-.aboutus-box{
-    overflow: hidden;
-    display: none;
-}
-
-.divprincipal {
-    display: flex;
-}
-
-.divprincipal .divdelprincipal-1 {
-    margin-right: 13px;
-}
-
-.divdelprincipal-1 i {
-    display: block;
-    margin-top: 14px;
-    text-align: center;
-}
-
-.divdelprincipal-2 a {
-    display: block;
-    margin-top: 12px;
-    text-align: center;
-}
-
-.divconh5ydiv {
-    display: flex;
-}
-
-.divconh5ydiv .emailbar {
-    width: 17vw;
-    height: 2vh;
-}
-@media (min-width:480px) {
-    footer{
-        font-size: 8px;        
-    }
-    .aboutus-box{
-        display: block;
+@media (min-width:375px) {
+    .create-form{
+        height: 70vw;
+        width: 70vw;
     }
 
 }
 @media (min-width:769px) {
-    footer{
-        font-size: 10px;        
+
+    main section{
+        font-size: 20px;
     }
     .create-form{
-        width: 40vw;
+        width: 30vw;
+        height: 30vw;
     }
     .control{
         font-size: 12px;
@@ -199,9 +111,14 @@ footer {
 
 }
 @media (min-width:1200px){
-        footer{
-            font-size: 12px;
-            justify-content: center;
+    .create-form{
+        width: 25vw;
+        height: 25vw;
+        margin: 5vw;
+        
+    }
+    main section{
+        font-size: 60px;
     }
 
 }

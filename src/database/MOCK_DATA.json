@@ -1,0 +1,276 @@
+[
+    {
+        "id": 1,
+        "name": "lata para gellititas",
+        "description": "askdhjksabdbasmdbjkasndkljaslkdjlkasjlkdjnaslkjndklashjdl;kjasklDJKLASDKLNSAKLDHKJASHJKDHJKASHD",
+        "category": "bazar",
+        "image": "lata.jpeg",
+        "price": "2800"
+    },
+    {
+        "id": 2,
+        "name": "mate triangulo",
+        "price": "1200",
+        "description": "aslkhjdklasjdklhasjkdhjkashfkjjsalkdfjklajsldjlkasjdlkasjdkljaskldfjaslkdjakls;jdlkasjdlkjaslkdjklasjdflkasjlkfjaslkfjhklashjf ",
+        "image": "1675359402366.jpg"
+    },
+    {
+        "id": 3,
+        "name": "tazón de corazones",
+        "price": "2100",
+        "description": "asjkdhjkashdkjhasjkfhjklsdhkjafhkjdsahjkhafjkladshfjklhsdjklfhdjksahfjkdshfjkdshjkfhdsjkfhlajkdshfalkjadshfjklh ",
+        "image": "1675360104061.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "shaker everlast",
+        "price": "4000",
+        "description": "sajdkhasdj,ksjhfhkljsdahfjkdhsjf,hjksdhafkjhdsjkfhjkldsahfjkdshkjfhjkdshfkjdhsfjkhdsjkfhjkdshfjkhsdjkfhajkhgjkdfshjkghsdjkfghdskjhfjksdhfjksdhfjkdshjkfhsdjkfhkjdshfkjsdhfjkhdsjkfhjkdshfjkdsfhdskjfhdsjkfhdskjfhdskjfhkjasdhfjkashkjdfhaskjdhjkas",
+        "image": "1675360390065.jpeg"
+    },
+    {
+        "id": 5,
+        "name": "pimentero acero",
+        "price": "2800",
+        "description": "klsajdjkhaslkdjkjahskjfhLKSDJKHDSJKAfhlkasjdlkasjdlkjaskldjklasjdklajsdlkjaskldjklasjdklasjdkljaksljdkljdkljasl;kdjkljdklsajkljdsklfjdskljfkldsjlkfj",
+        "image": "1675360577535.jpeg"
+    },
+    {
+        "id": 6,
+        "name": "exprimidor de metal",
+        "price": "2200",
+        "description": "lksajdklsajhdfkljsljfljsdlfjkkljsdkfjdskljfkldsjfclkfsdnkjcndksjnbvbiuerhguiverhfguiehfjkehwfjkhwejkhfjkewhfiuashfsuahfkjshafh",
+        "image": "1675360692845.jpeg"
+    },
+    {
+        "id": 7,
+        "name": "drunken tower",
+        "price": "5500",
+        "description": "askjhdjkashjdkhkjashdhkasjkhdfjklashdkjhasjlkdhjklsahFDJKLASHFJKASHJKFHJKSDAJKFHGASKJHFKJLASHFJKGHASJKDHJKASHJKDHJKASHDKJAShdljkalshkjLDHASJKDHAJKSHDJKahsjkdfhaskjdhasjkhdasjkdhasjkhd",
+        "image": "1675360775522.jpeg"
+    },
+    {
+        "id": 8,
+        "name": "botella de silicona plegable",
+        "price": "6000",
+        "description": "kosaihjdkjashdjkhasjkdfhjksahdfkjhasjkcbjkscbjksdhcfjksadhfjkajksfhjkashfjkashfdjkashfjkashJKFHASKJFHJKHFJKASHDJKCVHsdjhfjkasncfdaskljhckasnkjcjkashcna",
+        "image": "1675361102681.jpeg"
+    },
+    {
+        "id": 9,
+        "name": "botella termica",
+        "price": "6000",
+        "description": "aslkhdjiashcdsjhfjkshdjfkdskjfhjkdshfkjdshjkfhsdjkfhjksdhjkfhkjsdhfkjhsdjkhfjksdhfjkhsadjkfhdsjkhfjksdahafjkhdsjkafhjkdshfjksdhfjkhsadjkfhjksdhfjksdf",
+        "image": "1675361192667.jpg"
+    },
+    {
+        "id": 10,
+        "name": "placa antiadherente ",
+        "price": "2500",
+        "description": "skajhdjkhjsklfjkdshkjfjsdjfkjhdskjfjhjksdkjfhhjlksadgfhjkashjkdfhaskjhfjkdshfjkashjkfhasjkfhasjkfhkjashfkjashfjkashfkljhaskljfhjklsahfjklashfjklahskjlfakljf",
+        "image": "1675361292419.jpg"
+    },
+    {
+        "id": 11,
+        "name": "escurridor de cubiertos elefante",
+        "price": "2000",
+        "description": "lkasjdjkhasjkhfdbshfjhdskfkjdshhjkfhewciruineqvwiubyybiuyqbrehfcijdebvchiebviuebriuvbeirubvebvuiebnvujhndejuvdnhev;jjehniu;hn",
+        "image": "1675361363863.jpeg"
+    },
+    {
+        "id": 12,
+        "name": "reloj de pared gris",
+        "price": "4500",
+        "description": "lkjhjkhkjhjgjhgghfhjghgkfhjkhhjfgjkhjgjkhhjkgjkhkhjgjkhhjgjkhgjjkghjhgkjhjkgjkhkjhjkljkljkljlkjiouioyiuytutyutuyrtyurtyrtyreryuuhmhbhjfdrtertfhjjhbjkhkjl",
+        "image": "1675361447343.jpeg"
+    },
+    {
+        "id": 13,
+        "name": "saca corchos eléctricos",
+        "price": "9500",
+        "description": "klshjdhsjdkljslfjsjdaejdksjfkljdskjjdklerywoifdeiwrufjoijhvkladsjfklsjfldsjflkdsjfkajdsklfjkldsjflkdsjfjkhdsgjkhdsjkgjlksdjglkjsdlkghjdsklghsdjkhgjksdhg",
+        "image": "1675361507368.jpeg"
+    },
+    {
+        "id": 14,
+        "name": "paños absorbentes",
+        "price": "2000",
+        "description": "dkljhfkjhsdjkfkjdlhgdfkjlhgjlkfdhgjkndfkjgfdkjvnfdjknvfdkngkjdfnjknvdfjknvjkdfnvkjdfnvjkndfjkngvjkdfjkbnvjkdfnbjkfnjneribhrekjhrenbjkndfjbndfjkbnjkfdnbklfdnbkldfnklbndfklbnfdklbnkldfnbklfdnbklfdnbklndfklbnfdklbnkldfnbklfdnblkdfnbklfdnbkldfnb",
+        "image": "1675361575102.jpeg"
+    },
+    {
+        "id": 15,
+        "name": "set coctelería",
+        "price": "7000",
+        "description": "askljdjklsdhfjdsfhkjdshfkldsjfklsdjkfkdsjfkldhsklfsdklfhjkdsgvjkdlsfngjfndjv nejrnvionioenerjvnoernvlkrejglkjsdlfgjlkdfsjgkldfsjsgkldfjklgj",
+        "image": "1675361635474.jpeg"
+    },
+    {
+        "id": 16,
+        "name": "reloj de pared rose",
+        "price": "4500",
+        "description": "askldjkshjdfjksdkhfdskjvkjnkjnfvjkndfkjnvkjdsfghgjkfsdhgjkfdskjfkldsjflkdsjfklsdjklfjdsjfdsnvcm,sncvmdsnkjvndsjknvjklnkjnvjkdsnfjdsjnfkldsjfkljsdklfjkldsgfjsklgjkldsjfgkldsjgkljdsklgjfkldsjfglksadjgkljadslkgjakldsajglksdjfgkljsdklgjlksdjglkdsjglkdsjglkjsdlkgjklsdgj",
+        "image": "1675361721160.jpeg"
+    },
+    {
+        "id": 17,
+        "name": "mate prisma",
+        "price": "1200",
+        "description": "askljdjsakhdfkjdsljkhfvdsnvjbjdksnvkjsadhfsdhfkldshfkhdskjfhdsjkfhjkdsahfjksklfhdsjkadfjhdjkshdfvjkdhfvjkdfhvldkshvvkldashjdsvfkldshjdsvkldfsejfdsvfklsjdvlkdsjdfsfslkefjsdklgewjsdgb",
+        "image": "1675361762673.jpg"
+    },
+    {
+        "id": 18,
+        "name": "vaso de cafe",
+        "price": "1200",
+        "description": "sjfksdjf,kjdsjfvdsjvfjksdhkjhdksjksfjdkljdsjklfhjklfskjhvdfsklshskjhfkjesdhfgjkjhgklsdlgkjdfklsgjkldfmgkldfjkghl;kdfl;kgdf",
+        "image": "1675361834336.jpg"
+    },
+    {
+        "id": 19,
+        "name": "set tupper",
+        "price": "6000",
+        "description": "kldjsakjfhshdfjknsadcbdskcvndwhvnbjwneviubhewiuvhuiehvuierhfgiueqryfinewjkhcjbwbiu bwecjkbdjkchjkdsbcjdsbvidsbv iudwhvkjwebvijnwebjkvbewjkvewjkvnwehvhiuwehvjwhejkvhsdjkhvcjkdshfjkdshfkjdshfkjdhsafhjksdfhsdjkfhsdjkfhdjksfhjdksh",
+        "image": "1675361890004.jpeg"
+    },
+    {
+        "id": 20,
+        "name": "raqueta eléctrica para mosquitos",
+        "price": "3200",
+        "description": "skahjfdjksadhfjhsdjkhfkjdshfghkdsfjkvdskjhvjksdbvjkdbsjkvbsdjkbvjkdsbvjkdshvjkdshfkjhdsjkfhsdkjfhdjkshfkjdshfkjdshfkjhdskjfhdsjkfhkjdshfkjdshfjkhdsjkfhsdjkhfjksdhafjkhdsjkfhdsjkhfjksdhfkjdshafkjdsfasdhfkjasdhfkjdashafkjhdsajkfhadsjkfhkjdshfjkdshfjk",
+        "image": "1675361941468.jpeg"
+    },
+    {
+        "id": 21,
+        "name": "chispero con carga usb",
+        "price": "4000",
+        "description": "salkjdsjkahnf,adsvndsknvndslkvjlkjdeslfjsdfkjsdlkjflkdsjglkdfjbmfkjdfkljblkfdkg;ldfkglkjdfklgjdfklgjkldsfjgklsdfjglksdjfgkljsdklfjdsklfjdsklfjkldsjfkldsjflksdjfklsdjflkjdsklfjdslkjfkldsjflkadsjflkdsjfkljdslkfjalsdkjflkdsjflkdsjklfjsdklfjdsklfjdsklfjkldsjfklsdjklfjdsklfjkldsjfkldsjfklj",
+        "image": "1675361995252.jpg"
+    },
+    {
+        "id": 22,
+        "name": "especiero imantado",
+        "price": "8500",
+        "description": "sdkljkjfhsdkfjdsjvkndskjvkjdsnvjkdnskjvndskjvnjknewjkvnsjkvnsjkdnvjksnvjkdsjnjkvsdkjvkjdshjkwehjkewhjkewhvjkhewklvjhklewjvkljwklvjklfjvjksdjkvbdkjsbvjkdsbvjkbdsjkvbjksdbvjkdsbvjkdsav",
+        "image": "1675362049100.jpg"
+    },
+    {
+        "id": 23,
+        "name": "mortero de mármol",
+        "price": "5000",
+        "description": "jkhsdjkasckjsbdcknsakjcnaskjcnbkajbfhjasbdhjashdhjkhasjkdhasjkdhjkahfjkdshfjkhsdjkfhasjkfhkjashckjasckzxn kin kdsb vkjdbvkjdsbvhjdsbvjkhdsjkvhdskjhvjkdshvjkhdsjkVBDSJKBVJKDSNVE",
+        "image": "1675362123790.jpg"
+    },
+    {
+        "id": 24,
+        "name": "botella termica con pico",
+        "price": "6200",
+        "description": "sakdjasjfdsbhcjksdnkndsncknsdcdsjkncjkdsvckjbdjkbvjkdsbvhdsbvjhvbjhdskbnvjkdnskjvdnsjkvndsjknvjkdsnvsjknvkjdnsjksnkjnskjhnksjjkdnssdkjncjksndckjnsdkcjnsakjcnkjsancjksdnckjdsnvjksdnvkjdsv",
+        "image": "1675362177206.jpeg"
+    },
+    {
+        "id": 25,
+        "name": "sarten hudson",
+        "price": "5800",
+        "description": "kjahsjkcnsancasbncm,nakjsbcn,manscjbnm,cansmcn,asnc,asncjknkjsdncjkhbdsjkcbdjshbchjsdbjkvbjkdsbvjkbdsjkvbdskjbvjkdsbvjkbdsjkvbdsjkbvjksdbjkvbsdjkvbjksdbVJKBDSJKVBjksdbvjldsbvjndsjvcnsdljhfjhsdjfhjewkhfn",
+        "image": "1675362229907.jpg"
+    },
+    {
+        "id": 26,
+        "name": "mate porteño",
+        "price": "5000",
+        "description": "sjahcjksdbvn sdkvndsknckjsdnvjksdnvkjndsjkvndjksnvjkdsnvkjdnsjkvndsjknvkdsjkbvbdhjsvbdjkbvdjksbvkjdsbvkjdsbvjkdsbvkjdsbkjvbdsjkvbjkdsbvkjdsbjkvbdskjvbkjdsbv",
+        "image": "1675362272242.jpg"
+    },
+    {
+        "id": 27,
+        "name": "termometro de cocina",
+        "price": "2000",
+        "description": "oksajdjaskjhdfksjjdckdjsnfjkdsnvjknjkdsnvkjdnsvjkndsjkvndskjvndsjkvndjksnvkjdsnvjkdsnvjkdsnvjkdnsjkvndskjvnjkdsnvjkdsnjkvndsjknvjkdsnvkjdnskjvndsjknvjdsnvjkndsjafvhsdjkfhdasfjioewjfioewjfiohewiojfhwnfklnsdkflndsfv",
+        "image": "1675362323896.jpeg"
+    },
+    {
+        "id": 28,
+        "name": "lata decorativa",
+        "price": "2000",
+        "description": "kdijshcksankjchkjscdkjsahdklashjdkjnsjkcnaskbckjacijijbhwcjkwhedjkshadjkhjkdhsajkhdjkashdjkhasjkdhjkashdjkashdkjashjkdhaskjdhjkashdkjashdkjhaskjdhasjkhdjkashdjkashdkjasjkdhasjkdhajkshdkjashdkjhaskjdhasklhdkjashdkjashdkjsahjkdhsakjdhsakjdhkjashdkjash",
+        "image": "1675362372108.jpeg"
+    },
+    {
+        "id": 29,
+        "name": "planner mensual",
+        "price": "3000",
+        "description": "aksojdkjasncasbckjsancibaskjchiasjdlkasjhdlkjasiodjaskldjklasnckasncjsacnaksjncakjscnbjasnckjasnbckjasbcjkabskjcbsajkcnjhsabcjksacjkdsjkhfajkshfjksahdjksadjkasdjkashdkjasjdjkashjdkhasjkdhasjkhdjkashdjksahdjksahjkdhjakshdajskhdjksahdkjsahdjkh",
+        "image": "1675362424776.jpeg"
+    },
+    {
+        "id": 30,
+        "name": "reloj de pared simil madera",
+        "price": "5000",
+        "description": "akshdcjksncaskjncjkascb sadcnjkashfkjasjhdfjkjaskldhjkashdjkhasjkdhasjkcfjksahfkjsdncjkasdjkcvdjksbvbdskjbkjdasbvjkbdskjvbjkdsbvjkdjksbvjksdbjkvabdsjkvbjksdbvjksdbvjkbdsjkbvjksdbvjkdsbjkvbdsjkvbkjdsbvkjdsbvkjdsbkjvbdsjkbvkjdsbvjkdsbvjkdsbvjkdsbjkvbsdjkvbdsjkvbn",
+        "image": "1675362475301.jpeg"
+    },
+    {
+        "id": 31,
+        "name": "cierra bolsas",
+        "price": "850",
+        "description": "asl;jajskhncdnvjdsnvljdsvdnskjvndslkjdsakjfajdflkasjflkajskldjaskljdklasjlkdjaskljdlkasjlkdjaskljdklaskldlkasjdljaskldjaslkjdlkasjdlkjaslkdjklasjdklasjdkljasljdklasjdklasjdkljaslkdjaskldjklasjdlkasjdklsajdklasjdkljsalkdjaslkdjaslkjdlkasjdklsajdklsajdkl",
+        "image": "1675362531134.jpeg"
+    },
+    {
+        "id": 32,
+        "name": "vaso termico de acero",
+        "price": "4000",
+        "description": "salkhjkcndscjahsjhcjasdhajdkhasjkdhjkashfkjsahjkfhasjkhdfhladsdhfjkdshfjbvjhbhjdsbvjhdsbvjhdsbvjhdsjhvbdshjvbdshjbvhjdsbvhjdsbvjhbdsvhjdbshjvbjhbvjhdsbvhjdsbvhjdhsjkhvjkasfhgkjdsjfjklsdjflkjsdkljflksjfkldjsklfjdsklfjdlksjfkljdsklfjdslkjflkdsjfkldsjflkjdslkfjlksdjfklsdajfkldsjf",
+        "image": "1675362582061.jpeg"
+    },
+    {
+        "id": 33,
+        "name": "balanza de cocina",
+        "price": "4000",
+        "description": "asknckjsancnsakcnasjkcdkjasncjdslakjfnfndsmfndsm,v ,mxzc vm,cxv,m xmv dsmn vmdsnvmd smnds vnmds vmn dsnv dsnmv nsknvmndsm,vnm,dsnvm,dsnvm,ndsv",
+        "image": "1675362620286.jpeg"
+    },
+    {
+        "id": 34,
+        "name": "tazón infantil",
+        "price": "3000",
+        "description": "sanjkfbnsaknfkdsnv,madfmvnm,sdnfv sdfkvjndjkfvdsm,nfm,nsdm,fnds,mnfm,dsnfm,ds,nf,mdsnf,mdsn,mfndsm,nfm,dsm,fds,mnf,mdsnf,mdsnf,msdnf,mnsdm,fnm,dsfm,ndsm,fndsm,fn,mdsnf,mdsnfm,dnsm,fndsm,fndsm,fnm,dsnf",
+        "image": "1675362682018.jpeg"
+    },
+    {
+        "id": 35,
+        "name": "mate de madera decorado",
+        "price": "1200",
+        "description": "lkjsakdjhkanscbsdjkcj;dscbfkdsfkjdsjflkjasjdfldskjfklasjfklasjflkjaslkjflksajdlaksjdklasjdlkasjdklasjdkljasdjaskjdklasjdklajskldjaskldjaskldjklasjdkljaskldjaskljdklasdlljasndcksancjkdsnvkjdsnvcjknsdkvnkldsnvkldsnvjkdsnvkljndsjklvndsjklnvjkldsnvjkdsnvjkdsnvojdsn",
+        "image": "1675362722830.jpeg"
+    },
+    {
+        "id": 36,
+        "name": "humificador",
+        "price": "6000",
+        "description": "kjhdskjnvmkdsnvndsknvndskjnvjkdsnvjdsnkjvndsjkvndksnvkjdsnvklmsdlkvkdlnvkjdsnjvnjdsnvjkdsnvkjsdnvlknsdkjvnsdkjnvjknsdkjvanjkdsnvjkdsjkvkjdsnvjkdsnvkjdsnvjknsdkvndsknvjkdsnvksdnvlksdnvkndsknvkldsnklvndsklvnklsdnvklsdnvklndsklvndsklvnkldsnvkldsnvkldsnvklndsklvndsklv",
+        "image": "1675362768319.jpeg"
+    },
+    {
+        "id": 37,
+        "name": "manopla de silicona",
+        "price": "2800",
+        "description": "kjhdsajkdamskldbaskllcjnaksjfaslkdfjlkasjdkljaskldjasklfjaklsjflkasjdlkasjdlkasjdlkasjdkljaslkdjaslkjdlkasjdlkajskldaklsdklasmdlkasmdlasmdl;asmdlsal;mdklasmfklasmfvmdsa,fvdmfmklmfdklsajfkljlksadfjklasjfklasjflkasjflkasjfklasjfklasjFLKJASLKFDJALKFJALSKJFKLJFLKASJKLFDJASLKFJALSKJFKLASJFKL",
+        "image": "1675362811370.jpeg"
+    },
+    {
+        "id": 38,
+        "name": "mate ava",
+        "price": "1400",
+        "description": "askljdklfmmsdlvndsmvdsjvnldsjfjdsklfvnv ndslkvdklsjfkldsjflkjdskljflkdsjflkdsjklfjkldsjflkdsjflkjdslkfjsdlkvjlkdsjvglkdsjvkldsjvlkdsjvlkdsvjlkdsjvlkdsjvkldsjvkldsjvlkjdslkvjldksjvlkdsjvlkdsjvlkjdslkvjdslkvjlkdsvnlkdsnvlkdsnvlkdsnvdklsnvlkdsnvklndsklvndsklnvlkdsnvnldsklvndslknvkldsnvlkdsnvlkdsnvnlkdsn",
+        "image": "1675362851377.jpeg"
+    },
+    {
+        "id": 39,
+        "name": "taza con palabra",
+        "price": "1500",
+        "description": "askhjdiashdlaksjfkjsdlfjdsjflasjfdlaksjdklasjkldjaslkjdlkajslkdjaslkjdlkasjlkdjlkasjdlkjaslkdjlkasjdlkjaslkdjalskjdlkasjdlkasjdkljaskldjklasjdklasjdlkasjlkdjaskljdklasjdlkasjdklaslkjdklasjdkljaskldjaslkdjlkasjdklasjdlkjaslkdjaskldjklasjdklasjd",
+        "image": "1675363433572.jpeg"
+    }
+]

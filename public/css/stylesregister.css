@@ -47,7 +47,7 @@ div label{
     display: block;
 }
 
-.input {
+.form-input {
     width: 90%;
 }
 .sectionconboton{
@@ -65,6 +65,9 @@ div label{
     font-size: 7px;
    
 }
+.tomato{
+    color: tomato;
+}
 
 @media(min-width:768px){
     .sectiondelfooter i{
@@ -73,7 +76,7 @@ div label{
     main section{
         font-size: 20px;
     }
-    .input{
+    .form-input{
         font-size: 20px;
     }
     .divpararevisar a{
@@ -87,7 +90,7 @@ div label{
     main section{
         font-size: 60px;
     }
-    .input{
+    .form-input{
         font-size: 60px;
     }
     .divpararevisar a{

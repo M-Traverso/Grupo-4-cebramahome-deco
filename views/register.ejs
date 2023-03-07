@@ -27,22 +27,51 @@
                 </section>
             </header>
 
-            <form action="registro" method="post">
+            <form action="/register" method="POST" enctype="multipart/form-data" >
                 <div>
-                    <label for="usuario">Nombre de usuario:</label>
-                    <input type="text" id="usuario" placeholder="ingrese usuario" class="input">
+                    <label for="usuario">Nombre:</label>
+                    <input type="text" name="name" id="usuario" class="form-input"  value="<%= locals.old ? old.name : null %>">
+                    <% if ( locals.errors && errors.name) { %>
+                        <div class="tomato">
+                            <%= errors.name.msg %>
+                        </div>
+                        <% } %>
+                </div>
+                <div>
+                    <label for="usuario">Apellido:</label>
+                    <input type="text" name="lastName" id="usuario" class="form-input"  value="<%= locals.old ? old.lastName: null %>">
+                    <% if ( locals.errors && errors.lastName) { %>
+                        <div class="tomato">
+                            <%= errors.lastName.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div>
                     <label for="email">E-mail:</label>
-                    <input type="email" id="email" placeholder="ingrese su email" class="input">
+                    <input type="text" name="email" id="email"  class="form-input"  value="<%= locals.old ? old.email : null %>">
+                    <% if ( locals.errors && errors.email) { %>
+                        <div class="tomato">
+                            <%= errors.email.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div>
                     <label for="contraseña">contraseña :</label>
-                    <input type="password" id="contraseña" placeholder="ingrese una contraseña" class="input">
+                    <input type="password" name="password" id="contraseña"  class="form-input"  value="<%= locals.old ? old.password : null %>">
+                    <% if ( locals.errors && errors.password) { %>
+                        <div class="tomato">
+                            <%= errors.password.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div>
-                    <label for="repetircontraseña"> repita contraseña :</label>
-                    <input type="password" id="repetircontraseña" placeholder=" repita contraseña" class="input">
+                    <label for="imagen"> Avatar</label>
+                    <input type="file" name="image" id="imagen"  class="form-input" >
+                    <% if ( locals.errors && errors.image) { %>
+                        <div class="tomato">
+                            <%= errors.image.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="divconboton">
                     <button type="submit"> continuar </button>

@@ -19,14 +19,26 @@
     <%- include('./partials/headerSection')  %>
 
     <main>
-        <form action="/crear-producto" method="POST" class="create-form">
+        <form action="/login" method="POST" class="create-form" >
             <div class="control-form">
-                <label>Ingresa tu usuario:</label>
-                <input type="text" name="nombre" class="control"></input>
+                <label>Ingresa tu email:</label>
+                <input type="email" name="email" class="control"></input>
+                <% if (locals.errors && errors.email) {%>
+                    <div class="text-danger">
+                        <p><%= errors.email.msg%></p>
+                    </div>
+                    <% } %>
             </div>
             <div class="control-form">
                 <label>Ingresa tu contraseña</label>
-                <input type="text" name="precio" class="control"></input>
+                <input type="password" name="password" class="control"></input>
+            </div>
+            <div class="control-form">
+                <div class="form-group form-check">
+                    <label>
+                        <input type="checkbox" name="remember_user">Recordar mi usuario
+                    </label>
+                </div>
             </div>
             <button type="submit" class="button-login">Ingresar</button>
         </form>    
