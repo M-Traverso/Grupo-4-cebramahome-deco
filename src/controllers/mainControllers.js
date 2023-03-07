@@ -3,7 +3,7 @@ const path=require('path');
 const fs = require('fs');
 
 const productsPath = path.join(__dirname, '../database/MOCK_DATA.json');
-const productos = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+let productos = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
 // HOME
 
@@ -95,7 +95,11 @@ const update = (req, res) => {
 
 
 const destroy = (req, res) => {
-    res.send('Hola soy delete');
+    const {id} = req.params;
+
+    productos = productos.filter(elem => elem.id != id);
+
+    res.redirect('/products');
 }
 
 module.exports = {
