@@ -2,7 +2,9 @@ const express = require('express');
 const multer = require('multer')
 const path = require('path')
 const { check } = require('express-validator');
-const { register, login, cart, registerpost,loginpost } = require('../controllers/usersControllers');
+const { register, login, cart, registerpost,loginpost, logout } = require('../controllers/usersControllers');
+const guestMiddleware = require('../../middlewares/guestMiddleware');
+const authtMiddleware = require('../../middlewares/authMiddleware');
 
 //configurando storage
 const storage = multer.diskStorage({
@@ -44,15 +46,17 @@ const validateRegister = [
 ]
 
 
-
-
-routerUsers.get('/register', register);
+routerUsers.get('/register', guestMiddleware, register);
 routerUsers.post('/register', upload.single('image'), validateRegister, registerpost);
 
 
-routerUsers.get('/login', login);
+routerUsers.get('/login', guestMiddleware, login);
 routerUsers.post('/login', loginpost);
 
-routerUsers.get('/cart', cart);
+routerUsers.get('/cart', authtMiddleware, cart);
+
+// Logout
+
+routerUsers.get('/logout', logout);
 
 module.exports = routerUsers;

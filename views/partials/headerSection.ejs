@@ -6,21 +6,25 @@
                 <div class="div-logo">
                     <img src="/img/logo-cebrama.jpeg" class="logo">
                 </div>
-                <div class="div-form-header">
-                    <form class="searchbar">
-                        <label for="search"></label>
-                        <input type="text" id="search" placeholder="buscar..." class="input">
-                        <i class="fa-solid fa-magnifying-glass iforinput"></i>
-                    </form>
-                </div>
+                <nav class="main-searchbar">
+                    <form action="/search-product" method="POST" class="searchbar" >
+                    <input type="text" id="search" placeholder="Buscar productos, marcas..." class="input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    </form>                    
+                </nav>
 
                 <div class="div-ul-header">
                     <nav class="header-nav">
                         <ul>
+                            <% if (locals.isLogged) { %>
+                                <li><a href="/">home <i class="fa-solid fa-house"></i></a></li>
+                                <li><a href="/cart">carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+                                <li><a href="/logout">logout <i class="fa-solid fa-user"></i></a></li>
+                            <%} else {%>
                             <li><a href="/">home <i class="fa-solid fa-house"></i></a></li>
                             <li><a href="/login">inicio seción <i class="fa-solid fa-user"></i></a></li>
                             <li><a href="/register">registro <i class="fa-regular fa-chevron-down"></i></a></li>
-                            <li><a href="/cart">carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+                            <%}%>
                         </ul>
                     </nav>
                 </div>

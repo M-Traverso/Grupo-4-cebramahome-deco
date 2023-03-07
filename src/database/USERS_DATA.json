@@ -238,5 +238,13 @@
   "email": "arizzot@opensource.org",
   "password": "yah3Mxq",
   "avatar": "https://randomuser.me/api/portraits/men/74.jpg"
+ },
+ {
+  "id": 31,
+  "avatar": "1678197717250.jpg",
+  "name": "Manuel",
+  "lastName": "Traverso",
+  "email": "m.traverso96@gmail.com",
+  "password": "$2a$10$n3MSGpqiI0Qa9MtF372Tweb4hNr42xc.AH75edH6bq3l5DxKgkVtS"
  }
 ]
