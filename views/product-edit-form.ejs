@@ -18,44 +18,89 @@
     <%- include('./partials/headerSection') %>
         <main>
             <section class="section-form">
-            <div class="container products-wrapper">
-                <div class="row">
-                    <div class="header-header">
-                        <h2 class="products-title">Estás editando: <i> <%= productos.name %> </i></h2>
-                    </div>
-                </div>
-                <div class="div-form">
-                    <form action="/products/<%= productos.id %>?_method=PUT" method="POST">
-                        <div class="product-form">
-                            <div class="div-tranform">
-                                <label for="id" class="form-label">Id:</label>
-                                <input type="text" id="id" name="id" readonly="true" class="input-form" value="<%= productos.id %>">
-                            </div>
-                            <div class="div-tranform">
-                                <label for="name" class="form-label">Nombre del producto:</label>
-                                <input type="text" id="name" name="name" class="input-form" value="<%= productos.name %>">
-                            </div>
-                            <div class="div-tranform">
-                                <label for="price" class="form-label">Precio del producto:</label>
-                                <input type="text" id="price" name="price" class="input-form" value="<%= productos.price %>">
-                            </div>
-                            <div class="div-tranform">
-                                <label for="category" class="form-label">Categoría:</label>
-                                <input type="text" id="category" name="category" class="input-form" value="<%= productos.category %>">
-                            </div>
-                            <div class="div-tranform">
-                                <label for="description" class="form-label">Descripción:</label>
-                                <textarea name="description" id="description" class="input-form"><%= productos.description %></textarea>
-                            </div>
-                            <div class="divconboton" class="div-tranform">
-                                <button type="submit">Guardar producto</button>
-                            </div>
+                <div class="container products-wrapper">
+                    <div class="row">
+                        <div class="header-header">
+                            <h2 class="products-title">Estás editando: <i>
+                                    <%= productos.name %>
+                                </i></h2>
                         </div>
-                    </form>
+                    </div>
+                    <div class="div-form">
+                        <form action="/products/<%= productos.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                            <div class="product-form">
+                                <div class="div-tranform">
+                                    <label for="id" class="form-label">Id:</label>
+                                    <input type="text" id="id" name="id" readonly="true" class="input-form"
+                                        value="<%= productos.id %>">
+                                </div>
+                                <div class="div-tranform">
+                                    <label for="name" class="form-label">Nombre del producto:</label>
+                                    <input type="text" id="name" name="name" class="input-form"
+                                        value="<%= productos.name %>">
+                                        <% if (locals.errors && errors.name) { %>
+                                            <div class="text-danger">
+                                                <%= errors.name.msg %>
+                                            </div>
+                                      <% } %>
+                                </div>
+                                <div class="div-tranform">
+                                    <label for="price" class="form-label">Precio del producto:</label>
+                                    <input type="text" id="price" name="price" class="input-form"
+                                        value="<%= productos.price %>">
+                                        <% if (locals.errors && errors.price) { %>
+                                            <div class="text-danger">
+                                                <%= errors.price.msg %>
+                                            </div>
+                                      <% } %>
+                                </div>
+                                <div class="div-tranform">
+                                    <label for="category" class="form-label">Categoría:</label>
+                                    <select name="category" id="category_id" class="input-form">
+                                        <% for( let i=0; i < categorias.length; i++ ) { %>
+                                            <% if (categorias[i].id==productos.category_id) { %>
+                                                <option value="<%= categorias[i].id %>" selected>
+                                                    <%= categorias[i].name %>
+                                                </option>
+                                                <% } else {%>
+                                                    <option value="<%= categorias[i].id %>">
+                                                        <%= categorias[i].name %>
+                                                    </option>
+                                                    <% } %>
+
+                                                        <% } %>
+
+                                    </select>
+                                    <% if (locals.errors && errors.category) { %>
+                                        <div class="text-danger">
+                                            <%= errors.category.msg %>
+                                        </div>
+                                  <% } %>
+                                </div>
+                                <div class="div-tranform">
+                                    <label for="image" class="form-label">imagen:</label>
+                                    <input type="file" id="image" name="image" class="input-form imputing"
+                                        value="<%= productos.image %>">
+                                </div>
+                                <div class="div-tranform">
+                                    <label for="description" class="form-label">Descripción:</label>
+                                    <textarea name="description" id="description"
+                                        class="input-form"><%= productos.description %></textarea>
+                                        <% if (locals.errors && errors.description) { %>
+                                            <div class="text-danger">
+                                                <%= errors.description.msg %>
+                                            </div>
+                                      <% } %>
+                                </div>
+                                <div class="divconboton" class="div-tranform">
+                                    <button type="submit">Guardar producto</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
-        
-            </div>
-        </section>
+            </section>
 
         </main>
         <%- include('./partials/footerSection') %>

@@ -25,27 +25,55 @@
                     </section>
                 </div>
                 <div class="div-form">
-                    <form action="/products" method="POST" enctype="multipart/form-data">
+                    <form action="/products/create" method="POST" enctype="multipart/form-data">
                         <div class="product-form">
-                            <div class="div-tranform" >
+                            <div class="div-tranform">
                                 <label for="name">Nombre del producto:</label>
                                 <input type="text" id="name" name="name" class="input-form">
+                                <% if (locals.errors && errors.name) { %>
+                                    <div class="text-danger">
+                                        <%= errors.name.msg %>
+                                    </div>
+                                    <% } %>
                             </div>
                             <div class="div-tranform">
                                 <label for="price">Precio del producto:</label>
                                 <input type="number" id="price" name="price" class="input-form">
+                                <% if (locals.errors && errors.price) { %>
+                                    <div class="text-danger">
+                                        <%= errors.price.msg %>
+                                    </div>
+                                    <% } %>
                             </div>
                             <div class="div-tranform">
                                 <label for="image">imagen :</label>
-                                <input type="file" id="image" name="image" class="input-form imputimg">
+                                <input type="file" id="image" name="image" class="input-form imputing">
                             </div>
-                            <div class="div-tranform" >
+                            <div class="div-tranform">
                                 <label for="Category">Categoria del producto:</label>
-                                <input type="text" id="Category" name="Category" class="input-form">
+                                <select name="category" id="category_id" class="input-form">
+                                    <% for( let i=0; i < categorias.length; i++ ) { %>
+                                        <option value="<%= categorias[i].id %>">
+                                            <%= categorias[i].name %>
+                                        </option>
+
+                                        <% } %>
+
+                                </select>
+                                <% if (locals.errors && errors.category) { %>
+                                    <div class="text-danger">
+                                        <%= errors.category.msg %>
+                                    </div>
+                                    <% } %>
                             </div>
                             <div class="div-tranform">
                                 <label for="description"> descripcion :</label>
                                 <textarea name="description" id="description" class="input-form"></textarea>
+                                <% if (locals.errors && errors.description) { %>
+                                    <div class="text-danger">
+                                        <%= errors.description.msg %>
+                                    </div>
+                                    <% } %>
                             </div>
                             <div class="divconboton" class="div-tranform">
                                 <button type="submit"> continuar </button>

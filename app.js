@@ -6,6 +6,8 @@ const routerMain = require('./src/routes/main');
 const methodOverride =  require('method-override');
 const userlogged=require('./middlewares/userlogged');
 const routerUsers = require('./src/routes/users');
+const routerProducts = require('./src/routes/products');
+const db= require('./src/database/models');
 
 const port = process.env.PORT || 8080;
 
@@ -25,7 +27,17 @@ app.use(cookies());
 app.use(userlogged);
 
 app.use(routerMain);
+app.use(routerProducts);
 app.use(routerUsers);
+
+
+db.sequelize.authenticate()
+  .then(()=>{
+    console.log('conexion a la base de datos ok')
+  })
+  .catch(error=>{
+    console.log('el error es' +error)
+  });
 
 app.listen(port,()=>console.log(`LISTENING ON PORT ${port}`));
 

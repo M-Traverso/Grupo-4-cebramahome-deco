@@ -1,10 +1,10 @@
-const categorias = require('../database/categories');
+const categorias = require('../data/categories');
 const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const User = require('../../models/Users');
-const usersPath = path.join(__dirname, '../database/USERS_DATA.json');
+const usersPath = path.join(__dirname, '../data/USERS_DATA.json');
 const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 const bcryptjs = require('bcryptjs');
 
