@@ -21,6 +21,8 @@ let upload= multer({storage})
 
 routerMain.get('/products', productsController.allproducts);
 
+routerMain.get('/products/category/:id', productsController.productsbycategory);
+
 routerMain.get('/product/:id', productsController.productDetail);
 routerMain.get('/product/:id', productsController.productFind);
 

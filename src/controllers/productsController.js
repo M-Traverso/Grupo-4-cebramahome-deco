@@ -29,6 +29,17 @@ const productsController = {
             res.send(error);
         })
     },
+    productsbycategory: (req, res) => {
+        db.Products.findAll({
+            where:{category_id:req.params.id}
+        },{
+            include: [{ association: 'Categories' }]
+        })
+        .then((productos)=>{
+            res.render(path.join(__dirname, ('../../views/productsbycategory.ejs')), {'productos': productos })
+        })
+    
+    },
     productDetail: (req, res) => {
         db.Products.findByPk(req.params.id)
             .then(oneproduct => {
