@@ -23,8 +23,9 @@ routerMain.get('/products', productsController.allproducts);
 
 routerMain.get('/products/category/:id', productsController.productsbycategory);
 
+routerMain.get('/search', productsController.productSearch);
 routerMain.get('/product/:id', productsController.productDetail);
-routerMain.get('/product/:id', productsController.productFind);
+
 
 routerMain.get('/products/create', productsController.productCreate);
 routerMain.post('/products/create', upload.single('image'),validate, productsController.productStore);
