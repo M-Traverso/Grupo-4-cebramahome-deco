@@ -1,5 +1,5 @@
 const db = require('../database/models');
-const { Op } = require("sequelize");
+const Op = db.Sequelize.Op;
 const { validationResult } = require('express-validator');
 const path = require('path');
 
@@ -17,28 +17,28 @@ const productsController = {
             })
 
     },
-    productFind: (req, res) => {
-        const {name}=req.query
-        db.Products.findAll({
-            where:{name:{[Op.like]:`%${name}%`}}
+    productSearch: (req, res) => {
+        const { name } = req.query
+        db.Products.findOne({
+            where: { name: { [Op.like]: `%${name}%` } }
         })
-        .then(oneproduct => {
-            res.render(path.join(__dirname, ('../../views/productdetail.ejs')), { oneproduct })
-        })
-        .catch((error) => {
-            res.send(error);
-        })
+            .then(oneproduct => {
+                res.render(path.join(__dirname, ('../../views/productdetail.ejs')), { 'oneproduct': oneproduct })
+            })
+            .catch((error) => {
+                res.send(error);
+            })
     },
     productsbycategory: (req, res) => {
         db.Products.findAll({
-            where:{category_id:req.params.id}
-        },{
+            where: { category_id: req.params.id }
+        }, {
             include: [{ association: 'Categories' }]
         })
-        .then((productos)=>{
-            res.render(path.join(__dirname, ('../../views/productsbycategory.ejs')), {'productos': productos })
-        })
-    
+            .then((productos) => {
+                res.render(path.join(__dirname, ('../../views/productsbycategory.ejs')), { 'productos': productos })
+            })
+
     },
     productDetail: (req, res) => {
         db.Products.findByPk(req.params.id)
@@ -65,9 +65,9 @@ const productsController = {
         if (!profileImage) {
             profileImage = '../../img/default.png';
         }
-     
+
         if (errors.isEmpty()) {
-         
+
             db.Products.create({
                 id: null,
                 name: req.body.name,
@@ -84,14 +84,14 @@ const productsController = {
                 })
         } else {
             db.Categories.findAll()
-            .then(categorias => {
-                res.render(path.join(__dirname, ('../../views/productcreate.ejs')), { errors: errors.mapped(), old: req.body,categorias: categorias });
-            })
-            .catch((error) => {
-                res.send(error);
-            })
+                .then(categorias => {
+                    res.render(path.join(__dirname, ('../../views/productcreate.ejs')), { errors: errors.mapped(), old: req.body, categorias: categorias });
+                })
+                .catch((error) => {
+                    res.send(error);
+                })
         }
-       
+
     },
     productEdit: (req, res) => {
         let productos = db.Products.findByPk(req.params.id)
@@ -110,10 +110,10 @@ const productsController = {
         const x = db.Products.findAll()
         const existingImage = x.image;
         const image = req.file && req.file.filename
-      
+
 
         if (errors.isEmpty()) {
-           
+
             db.Products.update({
                 name: req.body.name,
                 price: req.body.price,
@@ -129,22 +129,22 @@ const productsController = {
                 .catch((error) => {
                     res.send(error);
                 })
-        }else{
+        } else {
             let productos = db.Products.findByPk(req.params.id)
             let categorias = db.Categories.findAll()
 
             Promise.all([productos, categorias])
                 .then(([productos, categorias]) => {
-                    res.render(path.join(__dirname, ('../../views/product-edit-form.ejs')), {errors: errors.mapped(), old: req.body, 'productos': productos, 'categorias': categorias });
+                    res.render(path.join(__dirname, ('../../views/product-edit-form.ejs')), { errors: errors.mapped(), old: req.body, 'productos': productos, 'categorias': categorias });
                 })
                 .catch((error) => {
                     res.send(error);
                 })
         }
 
-        
+
     },
-    productSoftDelete:(req,res)=>{
+    productSoftDelete: (req, res) => {
         db.Products.destroy({
             where: { id: req.params.id }
         })
@@ -155,9 +155,9 @@ const productsController = {
                 res.send(error);
             })
     },
-    productDestroy:(req,res)=>{
+    productDestroy: (req, res) => {
         db.Products.destroy({
-            where: { id: req.params.id },force:true
+            where: { id: req.params.id }, force: true
         })
             .then(() => {
                 res.redirect('/products')
