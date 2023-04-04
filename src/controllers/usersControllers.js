@@ -13,6 +13,21 @@ const Op = db.Sequelize.Op;
 const Users = db.User;
 
 const usersController = {
+
+// DETAIL
+
+   detail: (req,res) => {
+    Users.findByPk(req.params.id,{
+        include:['products']
+    }).then(oneUser => {
+        res.render(path.join(__dirname, ('../../views/userDetail.ejs')), { oneUser })
+    })
+    .catch((error) => {
+        res.send(error);
+    })  
+
+   },
+
 // REGISTER
 
     register: (req, res) => {
@@ -58,6 +73,48 @@ const usersController = {
     }
 
 },
+
+// EDIT
+
+   edit: (req, res) => {
+
+    Users.findByPk(req.params.id)
+    .then((userToEdit) => {
+            res.render(path.join(__dirname, ('../../views/userEdit.ejs')), {userToEdit});
+        })
+        .catch((error) => {
+            res.send(error);
+        });
+    },
+    
+    update: (req, res) => {
+
+    const errors = validationResult(req);
+
+    if (errors.isEmpty()) {
+
+        const {id} = req.body;
+
+    Users.update(
+        {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            avatar: req.file.filename     
+        },
+        {
+            where: {id: parseInt(id)}
+        }
+    ).then(() => res.status(200).redirect(`/user/${req.body.id}`)).catch((error) => res.send(error));
+    }else{
+        
+        let userToEdit = req.body;
+
+        res.render(path.join(__dirname, ('../../views/userEdit.ejs')), { errors: errors.mapped(), old: req.body, userToEdit});
+    }   
+
+   },
 
 // LOGIN
 

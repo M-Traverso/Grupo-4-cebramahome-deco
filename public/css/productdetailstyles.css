@@ -33,6 +33,12 @@ body {
     margin-left: 15px;
 }
 
+.div-contenido-user {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
 
 .div-h2-main {
     display: flex;
@@ -49,6 +55,16 @@ body {
     font-size: 4.4em;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.269);
+}
+
+.div-contenedor h2 {
+    font-size: 4.4em;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.269);
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
 }
 
 
@@ -83,6 +99,14 @@ body {
     display: block;
     margin: auto;
 
+}
+
+.img-user {
+    width: 70%;
+    height: 80%;
+    display: block;
+    margin: auto;
+    padding: 5px;
 }
 
 .div-break {
@@ -138,6 +162,21 @@ body {
     justify-content: center;
     padding: 15px 30px;
     margin-top: 15px;
+}
+
+.button-edit-user {
+    background-color: #9a9b6881;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.8em;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    max-width: 50%;
+    margin-top: 15px;
+    margin: auto;
 }
 
 .form-delete {

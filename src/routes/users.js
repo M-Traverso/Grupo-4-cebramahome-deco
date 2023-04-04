@@ -46,6 +46,10 @@ const validateRegister = [
 ]
 
 
+routerUsers.get('/user/:id', usersController.detail);
+routerUsers.get('/user/:id/edit', usersController.edit);
+routerUsers.put('/user/:id/edit', upload.single('image'), validateRegister, usersController.update);
+
 routerUsers.get('/register', guestMiddleware, usersController.register);
 routerUsers.post('/register', upload.single('image'), validateRegister, usersController.registerpost);
 
