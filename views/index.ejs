@@ -31,8 +31,8 @@
                                 <ul>
                                     <% for(let i=0; i < categorias.length; i++) {%>
                                         <li>
-                                            <a href="#">
-                                                <%= categorias[i].categoria %>
+                                            <a href="/products/category/ <%= categorias[i].id %>">
+                                                <%= categorias[i].name %>
                                             </a>
                                         </li>
                                         <%}%>

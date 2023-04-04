@@ -1,137 +1,186 @@
-const categorias = require('../database/categories');
+const categorias = require('../data/categories');
 const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-const User = require('../../models/Users');
-const usersPath = path.join(__dirname, '../database/USERS_DATA.json');
-const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
+// const User = require('../../models/Users');
+// const usersPath = path.join(__dirname, '../data/USERS_DATA.json');
+// const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 const bcryptjs = require('bcryptjs');
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
 
+const Users = db.User;
 
+const usersController = {
 
+// DETAIL
+
+   detail: (req,res) => {
+    Users.findByPk(req.params.id,{
+        include:['products']
+    }).then(oneUser => {
+        res.render(path.join(__dirname, ('../../views/userDetail.ejs')), { oneUser })
+    })
+    .catch((error) => {
+        res.send(error);
+    })  
+
+   },
 
 // REGISTER
 
-const register = (req, res) => {
+    register: (req, res) => {
     res.render('register');
-};
+},
 
 // REGISTER POST
 
-const registerpost = (req, res) => {
+    registerpost: (req, res) => {
 
-    const errors = validationResult(req)
-
-
-    let findByfield = function (field, text) {
-        let allusers = users
-        let userFound = allusers.find(e => e[field] === text)
-        return userFound;
-    }
-
-
+    const errors = validationResult(req);
 
     if (errors.isEmpty()) {
+        const {email} = req.body;
+
+        Users.findOne({
+            where: { email: { [Op.like]: `%${email}%` } }
+        }).then(userindb => {
+            if(userindb){
+                return res.render(path.join(__dirname, ('../../views/register.ejs')), { errors: { email: { msg: 'este email ya se registró' } }, old: req.body });
+            }else{
+
+                let usertocreate = {
+                    ...req.body,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                }
+                const avatar = req.file.filename;
+                let newUser = {
+                    avatar: avatar,
+                    ...usertocreate
+                }
+            
+                Users.create(newUser)
+                .then(()=>res.status(200)
+                .redirect('/login')).catch((error) => res.send(error));
+
+            }
+        });
 
     } else {
         console.log(errors)
         res.render(path.join(__dirname, ('../../views/register.ejs')), { errors: errors.mapped(), old: req.body });
     }
-    let userindb = findByfield('email', req.body.email);
 
-    if (userindb) {
-        return res.render(path.join(__dirname, ('../../views/register.ejs')), { errors: { email: { msg: 'este email ya se registró' } }, old: req.body });
-    }
+},
 
+// EDIT
 
+   edit: (req, res) => {
 
-    let usertocreate = {
-        ...req.body,
-        password: bcrypt.hashSync(req.body.password, 10),
-    }
-    const newId = users[users.length - 1].id + 1;
-    const avatar = req.file.filename;
+    Users.findByPk(req.params.id)
+    .then((userToEdit) => {
+            res.render(path.join(__dirname, ('../../views/userEdit.ejs')), {userToEdit});
+        })
+        .catch((error) => {
+            res.send(error);
+        });
+    },
+    
+    update: (req, res) => {
 
-    let newuser = {
-        id: newId,
-        avatar: avatar,
-        ...usertocreate
-    }
-    users.push(newuser);
-    fs.writeFileSync(usersPath, JSON.stringify(users, null, " "))
+    const errors = validationResult(req);
 
+    if (errors.isEmpty()) {
 
+        const {id} = req.body;
 
-    return res.redirect('/login')
+    Users.update(
+        {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            avatar: req.file.filename     
+        },
+        {
+            where: {id: parseInt(id)}
+        }
+    ).then(() => res.status(200).redirect(`/user/${req.body.id}`)).catch((error) => res.send(error));
+    }else{
+        
+        let userToEdit = req.body;
 
+        res.render(path.join(__dirname, ('../../views/userEdit.ejs')), { errors: errors.mapped(), old: req.body, userToEdit});
+    }   
 
-
-};
+   },
 
 // LOGIN
 
-const login = (req, res) => {
+    login: (req, res) => {
     res.render('login');
-};
+},
 
 // LOGIN POST
 
-const loginpost= (req,res) => {
-    let userToLogin = User.findByField('email', req.body.email);
+    loginpost: (req,res) => {
+    // let userToLogin = User.findByField('email', req.body.email);
+
+    const {email} = req.body;
+
+    Users.findOne({
+        where: { email: { [Op.like]: `%${email}%` } }
+    }).then(userindb => {
+        if(userindb){
+
+            let isOkPassword = bcryptjs.compareSync(req.body.password, userindb.password);
+            if (isOkPassword){
+                delete userindb.password;
+                req.session.userLogged = userindb;
     
-    if(userToLogin){
-
-        let isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-        if (isOkPassword){
-            delete userToLogin.password;
-            req.session.userLogged = userToLogin;
-
-            if(req.body.recuerdo) {
-                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2})                
+                if(req.body.recuerdo) {
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2})                
+                }
+    
+                res.redirect('/');
             }
-
-            res.redirect('/');
+            return res.render('login',{
+                errors: {
+                    email: {
+                        msg:'Las credenciales son invalidas'
+                    }              
+                }
+        
+            });
         }
+    
         return res.render('login',{
             errors: {
                 email: {
-                    msg:'Las credenciales son invalidas'
-                }              
+                    msg: 'Debes registrarte antes de loguearte'
+                }
             }
     
         });
-    }
+    });    
 
-    return res.render('login',{
-        errors: {
-            email: {
-                msg: 'Debes registrarte antes de loguearte'
-            }
-        }
-
-    });
-};
+},
 
 // PURCHASE CART
 
-const cart = (req, res) => {
+    cart: (req, res) => {
     res.render('cart');
-};
+},
 
 // Logout
 
-const logout = (req, res) => {
+    logout: (req, res) => {
     res.clearCookie('userEmail');
     req.session.destroy();
     return res.redirect('/login');
 }
 
-module.exports = {
-    register,
-    login,
-    cart,
-    registerpost,
-    loginpost,
-    logout
 }
+
+module.exports = usersController;

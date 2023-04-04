@@ -7,7 +7,7 @@
 const fs = require('fs');
 
 const Product = {
-    fileName: './src/database/MOCK_DATA.json',
+    fileName: './src/data/MOCK_DATA.json',
 
     getData: function () {
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
