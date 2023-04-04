@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesformcreate.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/7b924e2171.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Creá tu producto</title>
+</head>
+
+<body>
+    <%- include('./partials/headerSection') %>
+        <main>
+            <section class="section-form">
+                <div class="container products-wrapper">
+                    <div class="row">
+                        <div class="header-header">
+                            <h2 class="products-title"><i>
+                                    <%= userToEdit.firstName %>
+                                </i>estás editando tu perfil </h2>
+                        </div>
+                    </div>
+                    <div class="div-form">
+                        <form action="/user/<%= userToEdit.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                            <div class="product-form">
+                                <div class="div-tranform">
+                                    <label for="id" class="form-label">Id:</label>
+                                    <input type="text" id="id" name="id" readonly="true" class="input-form"
+                                        value="<%= userToEdit.id %>">
+                                </div>
+                                <div class="div-tranform">
+                                    <label for="firstName" class="form-label">Ingresa tu nombre:</label>
+                                    <input type="text" id="firstName" name="firstName" class="input-form"
+                                        value="<%= userToEdit.firstName %>">
+                                        <% if (locals.errors && errors.firstName) { %>
+                                            <div class="text-danger">
+                                                <%= errors.firstName.msg %>
+                                            </div>
+                                      <% } %>
+                                </div>
+                                <div class="div-tranform">
+                                    <label for="lastName" class="form-label">Ingresa tu apellido:</label>
+                                    <input type="text" id="lastName" name="lastName" class="input-form"
+                                        value="<%= userToEdit.lastName %>">
+                                        <% if (locals.errors && errors.lastName) { %>
+                                            <div class="text-danger">
+                                                <%= errors.lastName.msg %>
+                                            </div>
+                                      <% } %>
+                                </div>
+                                <div class="div-tranform">
+                                    <label for="email" class="form-label">Ingresa tu correo electronico:</label>
+                                    <input type="email" name="email" id="email" class="input-form"
+                                    value="<%= userToEdit.email %>">
+                                        <% if (locals.errors && errors.email) { %>
+                                            <div class="text-danger">
+                                                <%= errors.email.msg %>
+                                            </div>
+                                      <% } %>
+                                </div>
+                                <div class="div-tranform">
+                                    <label for="password" class="form-label">Ingresa tu nueva contraseña:</label>
+                                    <input type="text" name="password" id="password" class="input-form">
+                                        <% if (locals.errors && errors.password) { %>
+                                            <div class="text-danger">
+                                                <%= errors.password.msg %>
+                                            </div>
+                                      <% } %>
+                                </div>                                
+                                <div class="div-tranform">
+                                    <label for="image" class="form-label">imagen:</label>
+                                    <input type="file" id="image" name="image" class="input-form imputing">
+                                    <% if ( locals.errors && errors.image) { %>
+                                        <div class="text-danger">
+                                            <%= errors.image.msg %>
+                                        </div>
+                                        <% } %>
+                                </div>
+                                <div class="divconboton" class="div-tranform">
+                                    <button type="submit">Guardar cambios</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+        <%- include('./partials/footerSection') %>
+</body>
+
+</html>
