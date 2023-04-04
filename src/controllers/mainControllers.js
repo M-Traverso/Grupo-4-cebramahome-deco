@@ -2,7 +2,7 @@ const categorias = require('../data/categories');
 const path=require('path');
 const fs = require('fs');
 const Product = require('../../models/Products');
-const db=require('../database/models');
+const db = require('../database/models');
 
 const productsPath = path.join(__dirname, '../data/MOCK_DATA.json');
 let productos = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));

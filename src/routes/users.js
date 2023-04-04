@@ -2,9 +2,9 @@ const express = require('express');
 const multer = require('multer')
 const path = require('path')
 const { check } = require('express-validator');
-const { register, login, cart, registerpost,loginpost, logout } = require('../controllers/usersControllers');
 const guestMiddleware = require('../../middlewares/guestMiddleware');
 const authtMiddleware = require('../../middlewares/authMiddleware');
+const usersController = require('../controllers/usersControllers');
 
 //configurando storage
 const storage = multer.diskStorage({
@@ -23,7 +23,7 @@ const routerUsers = express.Router();
 
 
 const validateRegister = [
-    check('name').notEmpty().withMessage('introduzca su nombre'),
+    check('firstName').notEmpty().withMessage('introduzca su nombre'),
     check('email').notEmpty().withMessage('introduzca su correo electronico').bail().isEmail().withMessage('introduzca un formato de correo valido'),
     check('password').notEmpty().withMessage('introduzca su contraseña'),
     check('lastName').notEmpty().withMessage('introduzca su apellido'),
@@ -46,17 +46,17 @@ const validateRegister = [
 ]
 
 
-routerUsers.get('/register', guestMiddleware, register);
-routerUsers.post('/register', upload.single('image'), validateRegister, registerpost);
+routerUsers.get('/register', guestMiddleware, usersController.register);
+routerUsers.post('/register', upload.single('image'), validateRegister, usersController.registerpost);
 
 
-routerUsers.get('/login', guestMiddleware, login);
-routerUsers.post('/login', loginpost);
+routerUsers.get('/login', guestMiddleware, usersController.login);
+routerUsers.post('/login', usersController.loginpost);
 
-routerUsers.get('/cart', authtMiddleware, cart);
+routerUsers.get('/cart', authtMiddleware, usersController.cart);
 
 // Logout
 
-routerUsers.get('/logout', logout);
+routerUsers.get('/logout', usersController.logout);
 
 module.exports = routerUsers;

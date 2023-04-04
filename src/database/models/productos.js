@@ -40,6 +40,13 @@ module.exports=(sequelize,DataTypes)=>{
          as:'Categories',
          foreignKey:"category_id"
        })
-  };
+       products.belongsToMany(models.User, {
+        as: "users",
+        through: "sales",
+        foreignKey: "product_id",
+        otherKey: "user_id",
+        timestamps:false
+      });
+  }
   return products
 }
