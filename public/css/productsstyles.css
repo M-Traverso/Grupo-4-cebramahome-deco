@@ -111,14 +111,16 @@ body {
     justify-content: space-around;
 }
 
-.div-precio-carrito  a i{
+.div-precio-carrito i {
     margin: 5px;
     color: black;
+    transition: all 1000ms;
+}
+
+.div-precio-carrito i:hover {
     transform: rotatez(360deg)
 }
-.div-precio-carrito a i :hover{
-    transform: rotatez(360deg)
-}
+
 
 @media (min-width:576px) {
     .section-article {
