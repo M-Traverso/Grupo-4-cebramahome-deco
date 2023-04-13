@@ -21,12 +21,12 @@
                         <ul>
                             <% if (locals.isLogged) { %>
                                 <li><a href="/">home <i class="fa-solid fa-house"></i></a></li>
-                                <li><a href="/cart">carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+                                <li><a href="#" id="button-cart"><span>0</span><i class="fa-solid fa-cart-shopping"></i></a></li>
                                 <li class="dropdown">                                    
                                       <button onclick="myFunction()" class="dropbtn">Usuario <i class="fa-solid fa-user"></i></button>
                                       <div id="myDropdown" class="dropdown-content">
                                         <a href="/user/<%= locals.userLogged.id %>/edit">Editar perfil</a>
-                                        <a href="/logout">Logout</a>
+                                        <a href="/logout" id="logout">Logout</a>
                                       </div>                                    
                                 </li>                               
                             <%} else {%>
@@ -39,6 +39,22 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section>
+      <div class="container" id="container">
+        <h1>Carrito</h1>
+        <div class="div-ul">
+            <ul class="list">
+                
+            </ul>
+        </div>
+        <div class="total">
+            <p class="total-p">
+                
+            </p>
+            <button type="submit" id="button-buy">Comprar</button>
+        </div>
+    </div>
     </section>
     <script>
         /* When the user clicks on the button, 

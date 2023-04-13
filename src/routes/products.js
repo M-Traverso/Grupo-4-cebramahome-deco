@@ -1,7 +1,9 @@
 const express = require('express');
 const multer= require('multer');
 const path= require('path');
-const validate= require('../../middlewares/validation')
+const authtMiddleware = require('../../middlewares/authMiddleware');
+const validate= require('../../middlewares/validation');
+
 const routerMain = express.Router();
 
 const productsController= require('../controllers/productsController')
@@ -24,13 +26,13 @@ routerMain.get('/products', productsController.allproducts);
 routerMain.get('/products/category/:id', productsController.productsbycategory);
 
 routerMain.get('/search', productsController.productSearch);
-routerMain.get('/product/:id', productsController.productDetail);
+routerMain.get('/product/:id',authtMiddleware, productsController.productDetail);
 
 
-routerMain.get('/products/create', productsController.productCreate);
+routerMain.get('/products/create',authtMiddleware, productsController.productCreate);
 routerMain.post('/products/create', upload.single('image'),validate, productsController.productStore);
 
-routerMain.get('/products/:id/edit', productsController.productEdit);
+routerMain.get('/products/:id/edit',authtMiddleware, productsController.productEdit);
 routerMain.put('/products/:id/edit',upload.single('image'),validate,productsController.productUpdate);
 
 routerMain.delete('/products/:id', productsController.productDestroy); 

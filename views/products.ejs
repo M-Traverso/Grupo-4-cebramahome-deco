@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/productsstyles.css">
+    <link rel="stylesheet" href="/css/stylescart.css">
     <script src="https://kit.fontawesome.com/7b924e2171.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,25 +27,25 @@
                     <% for(let i=0; i < productos.length; i++) {%>
                         <article class="article-productos">
                             <div class="infodetail">
-                                <a href="/product/<%=productos[i].id %>">
+                                <a href="/product/<%=productos[i].id %> ">
                                     <figure class="imgarticle">
-                                        <img src=/img/<%=productos[i].image %> alt="">
+                                        <img id="img-src" src=/img/<%=productos[i].image %> alt="">
                                     </figure>
                                     <div class="divcontodaladescripcion">
-                                        <h2>
+                                        <h2 class="titledescription">
                                             <%= productos[i].name %>
                                         </h2>
                                     </div>
                                     <div class="div-precio-carrito">
-                                        <p>
+                                        <p id="price">
                                             $<%= productos[i].price %>
                                         </p>
-                                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                                        <a id="button-cartt"><i class="fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </a>
                             </div>
                         </article>
-                     <%}%>
+                        <%}%>
 
                 </div>
             </section>
@@ -52,6 +53,8 @@
         </main>
 
         <%- include('./partials/footerSection') %>
+            <script src="/js/logged.js"></script>
+            <script src="/js/cart.js"></script>
 </body>
 
 </html>
