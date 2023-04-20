@@ -1,6 +1,6 @@
 
 
-window.addEventListener('load', function () {
+
     let buttons = document.querySelectorAll('#button-cartt');
   let user=localStorage.getItem('user');
   console.log(localStorage);
@@ -14,4 +14,3 @@ window.addEventListener('load', function () {
         }
     } 
 
-})

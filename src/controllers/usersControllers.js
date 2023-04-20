@@ -143,7 +143,7 @@ const usersController = {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2})                
                 }
     
-                res.redirect('/');
+               return res.redirect('/');
             }
             return res.render('login',{
                 errors: {
@@ -167,11 +167,8 @@ const usersController = {
 
 },
 
-// PURCHASE CART
 
-    cart: (req, res) => {
-    res.render('cart');
-},
+
 
 // Logout
 

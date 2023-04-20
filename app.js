@@ -9,7 +9,7 @@ const userlogged=require('./middlewares/userlogged');
 const routerUsers = require('./src/routes/users');
 const routerProducts = require('./src/routes/products');
 const db= require('./src/database/models');
-
+const routesapisales=require('./src/api/routes/routesapisales');
 const port = process.env.PORT || 8080;
 
 const app= express();
@@ -30,6 +30,7 @@ app.use(userlogged);
 app.use(routerMain);
 app.use(routerProducts);
 app.use(routerUsers);
+app.use('/api/sales',routesapisales);
 
 
 db.sequelize.authenticate()

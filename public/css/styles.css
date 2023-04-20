@@ -374,7 +374,9 @@ main {
     transform: rotatez(360deg)
 }
 
-
+.pid{
+    display: none;
+}
 
 
 .masproductos {
