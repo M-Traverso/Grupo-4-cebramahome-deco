@@ -58,8 +58,6 @@ routerUsers.post('/register', upload.single('image'), validateRegister, usersCon
 routerUsers.get('/login', guestMiddleware, usersController.login);
 routerUsers.post('/login', usersController.loginpost);
 
-routerUsers.get('/cart', authtMiddleware, usersController.cart);
-
 // Logout
 
 routerUsers.get('/logout', usersController.logout);

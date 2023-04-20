@@ -26,30 +26,39 @@
       </div>
       <div class="div-contenedor">
         <div class="div-contenido ">
-
-          <article class="article-product">
-            <div class="div-img-article">
-              <img id="imgdetail" src='/img/<%= oneproduct.image %>' alt="" class="img-product">
-              <div class="div-break">
-                <p>
-                  <%= oneproduct.description %>
-                </p>
-              </div>
-            </div>
-          </article>
-          <div class="div-detail">
-            <h2 id="namedetail">
-              <%= oneproduct.name%>
-            </h2 >
-            <P id="pricedetail">
-              $<%= oneproduct.price %>
-            </P>
-            <a id="button-cartts" class="button-buy">comprar</a>
-            <a href="/products/<%= oneproduct.id %>/edit" class="button-edit">editar</a>
-            <form action="/products/<%= oneproduct.id %>?_method=DELETE" method="POST" class="form-delete">
-              <button type="submit" class="button-delete">eliminar</button>
-            </form>
-          </div>
+          <% if (locals.isLogged) { %>
+            <p id="userid" class="pid">
+              <%= locals.userLogged.id %>
+            </p>
+            <%} else {%>
+              <p id="userid" class="pid"></p>
+              <%}%>
+                <article class="article-product">
+                  <div class="div-img-article">
+                    <img id="imgdetail" src='/img/<%= oneproduct.image %>' alt="" class="img-product">
+                    <div class="div-break">
+                      <p>
+                        <%= oneproduct.description %>
+                      </p>
+                    </div>
+                  </div>
+                </article>
+                <div class="div-detail">
+                  <h2 id="namedetail">
+                    <%= oneproduct.name%>
+                  </h2>
+                  <P id="pricedetail">
+                    $<%= oneproduct.price %>
+                  </P>
+                  <p id="pid" class="pid">
+                    <%= oneproduct.id %>
+                  </p>
+                  <a id="button-cartts" class="button-buy">comprar</a>
+                  <a href="/products/<%= oneproduct.id %>/edit" class="button-edit">editar</a>
+                  <form action="/products/<%= oneproduct.id %>?_method=DELETE" method="POST" class="form-delete">
+                    <button type="submit" class="button-delete">eliminar</button>
+                  </form>
+                </div>
 
         </div>
       </div>
@@ -58,7 +67,7 @@
     </main>
 
     <%- include('./partials/footerSection') %>
-    <script src="/js/cart.js"></script>
+      <script src="/js/cart.js"></script>
 </body>
 
 </html>
