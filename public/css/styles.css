@@ -128,7 +128,10 @@ body {
 span{
     display: block;
     font-size: 7px;
-    color: red;
+    color:white;
+    background-color: rgb(255, 119, 0);
+    text-align: center;
+    border-radius: 50%;
 }
 .header-nav a {
     text-decoration: none;

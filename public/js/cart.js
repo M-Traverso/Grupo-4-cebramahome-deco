@@ -253,48 +253,7 @@ function quantityChange(event) {
 
 
 let displayCart = document.querySelector('.container');
-// function buyButtonclick() {
-//     const listli = document.querySelectorAll('.list li');
-//      const data=[];
-//     listli.forEach(item => {
-//         const idProducts=item.querySelector('#idpro').textContent.trim();
-//         const idUser=item.querySelector('#iduserpro').textContent.trim();
-       
-//         data.push({product_id:idProducts,user_id:idUser})
-//     })
-//   console.log(data);
-//     let settings = {
-//         "method": "POST",
-//         "headers": {
-//             "content-type": "application/json"
-//         },
-//         "body": JSON.stringify(data)
-//     }
-//     fetch('http://localhost:8080/api/sales/create', settings)
-//         .then(response =>{
-//             if (!response.ok) {
-//                 throw new Error('Error al enviar los datos al servidor');
-//               }
-//               return response.json();
-//             })
-//         .then(()=>{
-//             shoppingCartsItemsContainer.innerHTML = "";
-//             updateShoppingCartTotal();
-//             displayCart.style.display = 'none';
-//             alert('Gracias por su compra');
-//             localStorage.removeItem('image');
-//             localStorage.removeItem('price');
-//             localStorage.removeItem('title');
-//             localStorage.removeItem('id');
-//             localStorage.removeItem('iduser');
-//         })
-//         .catch(error=>{
-//             console.log(error);
-//         })
 
-  
-
-// }
 function buyButtonclick() {
     const listli = document.querySelectorAll('.list li');
     const data = new URLSearchParams();
@@ -412,6 +371,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
-
 
 
