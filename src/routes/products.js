@@ -26,6 +26,7 @@ routerMain.get('/products', productsController.allproducts);
 routerMain.get('/products/category/:id', productsController.productsbycategory);
 
 routerMain.get('/search', productsController.productSearch);
+routerMain.post('/search', productsController.productForSearch);
 routerMain.get('/product/:id',authtMiddleware, productsController.productDetail);
 
 
