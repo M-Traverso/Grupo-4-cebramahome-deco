@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/stylescart.css">
   <link rel="stylesheet" href="/css/productdetailstyles.css">
   <script src="https://kit.fontawesome.com/7b924e2171.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,29 +26,39 @@
       </div>
       <div class="div-contenedor">
         <div class="div-contenido ">
-
-          <article class="article-product">
-            <div class="div-img-article">
-              <img src='/img/<%= oneproduct.image %>' alt="" class="img-product">
-              <div class="div-break">
-                <p>
-                  <%= oneproduct.description %>
-                </p>
-              </div>
-            </div>
-          </article>
-          <div class="div-detail">
-            <h2>
-              <%= oneproduct.name%>
-            </h2>
-            <P>$<%= oneproduct.price %>
-            </P>
-            <a href="" class="button-buy">comprar</a>
-            <a href="/products/<%= oneproduct.id %>/edit" class="button-edit">editar</a>
-            <form action="/products/<%= oneproduct.id %>?_method=DELETE" method="POST" class="form-delete">
-              <button type="submit" class="button-delete">eliminar</button>
-            </form>
-          </div>
+          <% if (locals.isLogged) { %>
+            <p id="userid" class="pid">
+              <%= locals.userLogged.id %>
+            </p>
+            <%} else {%>
+              <p id="userid" class="pid"></p>
+              <%}%>
+                <article class="article-product">
+                  <div class="div-img-article">
+                    <img id="imgdetail" src='/img/<%= oneproduct.image %>' alt="" class="img-product">
+                    <div class="div-break">
+                      <p>
+                        <%= oneproduct.description %>
+                      </p>
+                    </div>
+                  </div>
+                </article>
+                <div class="div-detail">
+                  <h2 id="namedetail">
+                    <%= oneproduct.name%>
+                  </h2>
+                  <P id="pricedetail">
+                    $<%= oneproduct.price %>
+                  </P>
+                  <p id="pid" class="pid">
+                    <%= oneproduct.id %>
+                  </p>
+                  <a id="button-cartts" class="button-buy">comprar</a>
+                  <a href="/products/<%= oneproduct.id %>/edit" class="button-edit">editar</a>
+                  <form action="/products/<%= oneproduct.id %>?_method=DELETE" method="POST" class="form-delete">
+                    <button type="submit" class="button-delete">eliminar</button>
+                  </form>
+                </div>
 
         </div>
       </div>
@@ -56,6 +67,7 @@
     </main>
 
     <%- include('./partials/footerSection') %>
+      <script src="/js/cart.js"></script>
 </body>
 
 </html>

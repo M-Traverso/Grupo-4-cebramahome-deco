@@ -1,59 +1,110 @@
-main{
-    padding: 2px;
+h1 {
+    text-align: center;
 }
 
-.box-cart{
+.container {
+    display: none;
+    width: 50%;
+    position: absolute;
+    top: 150px;
+    right: 0;
+    z-index: 9999;
+    padding: 10px;
     background-color: #FAE5D3;
     border: solid 1px grey;
-    width: 40vw;
-    padding: 5px;
-    margin: auto;
-    position: relative;
+
+
 }
 
-.product-list-header{
+
+.todo {
     display: flex;
-    justify-content: space-around;
-    border: solid 1px grey;
-
 }
 
-h3{
-    display: block;
+.div-ul {
+    text-align: center;
 }
 
-.product-list{
-    display: flex;
-    justify-content: space-around;
-    border: solid 1px grey;
-    margin: 5px 0;
+.div-ul ul {
+    padding: 0px;
 }
 
-.product-list-discounts, .product-list-total {
+.div-ul ul li {
     list-style: none;
+    margin-top: 15px;
+
 }
 
-.buy-button{
-    background-color: #9B7E68;
+.div-img {
+    width: 50%;
+    text-align: center;
+}
+
+.div-img img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+}
+.div-x3{
+    width: 40%;
+}
+
+.div-length input {
+    width: 42%;
+}
+
+.div-length button {
+    background-color: #a6571a;
     border: none;
-    font-size: 12px;
+    font-size: 9px;
     font-weight: bold;
     color: #ffffff;
     padding: 5px 10px;
     border-radius: 5px;
+    width: 50%;
 }
 
-.total-amount{
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total button {
     background-color: #9B7E68;
-    text-align: center;
-    font-weight: bold;
-    margin: 5px;
-    padding: 5px;
-    width: 5vw;
-    border: solid 1px black;
-    border-radius: 4px;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    height: 4vh;
 }
 
 
+@media (min-width:1000px) {
+    .div-img img {
+        width: 50%;
+        height: 200px;
 
+    }
 
+    .div-x3 {
+        font-size: 30px;
+
+    }
+
+    .div-length input {
+        font-size: 25px;
+        width: 20%;
+    }
+
+    .div-length button {
+        font-size: 25px;
+    }
+
+    .total p {
+        font-size: 20px;
+    }
+
+    .total button {
+        font-size: 20px;
+    }
+}

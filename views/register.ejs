@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/stylesregister.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/stylescart.css">
     <script src="https://kit.fontawesome.com/7b924e2171.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,10 +27,11 @@
                 </section>
             </header>
 
-            <form action="/register" method="POST" enctype="multipart/form-data" >
+            <form action="/register" method="POST" enctype="multipart/form-data" id="form" >
+                <ul class="errores" id="errores"></ul>
                 <div>
                     <label for="usuario">Nombre:</label>
-                    <input type="text" name="firstName" id="usuario" class="form-input"  value="<%= locals.old ? old.firstName : null %>">
+                    <input type="text" name="firstName" id="firstName" class="form-input"  value="<%= locals.old ? old.firstName : null %>">
                     <% if ( locals.errors && errors.firstName) { %>
                         <div class="tomato">
                             <%= errors.firstName.msg %>
@@ -39,7 +40,7 @@
                 </div>
                 <div>
                     <label for="usuario">Apellido:</label>
-                    <input type="text" name="lastName" id="usuario" class="form-input"  value="<%= locals.old ? old.lastName: null %>">
+                    <input type="text" name="lastName" id="lastName" class="form-input"  value="<%= locals.old ? old.lastName: null %>">
                     <% if ( locals.errors && errors.lastName) { %>
                         <div class="tomato">
                             <%= errors.lastName.msg %>
@@ -48,7 +49,7 @@
                 </div>
                 <div>
                     <label for="email">E-mail:</label>
-                    <input type="text" name="email" id="email"  class="form-input"  value="<%= locals.old ? old.email : null %>">
+                    <input type="text" name="email" id="mail"  class="form-input"  value="<%= locals.old ? old.email : null %>">
                     <% if ( locals.errors && errors.email) { %>
                         <div class="tomato">
                             <%= errors.email.msg %>
@@ -86,5 +87,6 @@
     <!-- Footer Section -->
 
     <%- include('./partials/footerSection')  %>
+    <script src="/js/register.js"></script>    
 </body>
 </html>

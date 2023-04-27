@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/styleslogin.css">
-    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/stylescart.css">
     <script src="https://kit.fontawesome.com/7b924e2171.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Ingresar</title>
 </head>
 <body>
     <!-- Header Section -->
@@ -20,9 +20,10 @@
 
     <main>
         <form action="/login" method="POST" class="create-form" >
+            <ul class="errores" id="errores"></ul>
             <div class="control-form">
                 <label>Ingresa tu email:</label>
-                <input type="email" name="email" class="control"></input>
+                <input type="email" name="email" class="control" id="email"></input>
                 <% if (locals.errors && errors.email) {%>
                     <div class="text-danger">
                         <p><%= errors.email.msg%></p>
@@ -31,7 +32,7 @@
             </div>
             <div class="control-form">
                 <label>Ingresa tu contraseña</label>
-                <input type="password" name="password" class="control"></input>
+                <input type="password" name="password" class="control" id="password"></input>
             </div>
             <div class="control-form">
                 <div class="form-group form-check">
@@ -40,13 +41,13 @@
                     </label>
                 </div>
             </div>
-            <button type="submit" class="button-login">Ingresar</button>
+            <button type="submit" class="button-login" id="button-submit">Ingresar</button>
         </form>    
     </main>
 
     <!-- Footer Section -->
 
     <%- include('./partials/footerSection')  %>
-
+    <script src="/js/login.js"></script>
 </body>
 </html>

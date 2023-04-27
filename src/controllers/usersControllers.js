@@ -68,7 +68,6 @@ const usersController = {
         });
 
     } else {
-        console.log(errors)
         res.render(path.join(__dirname, ('../../views/register.ejs')), { errors: errors.mapped(), old: req.body });
     }
 
@@ -143,7 +142,7 @@ const usersController = {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2})                
                 }
     
-                res.redirect('/');
+               return res.redirect('/');
             }
             return res.render('login',{
                 errors: {
@@ -167,11 +166,8 @@ const usersController = {
 
 },
 
-// PURCHASE CART
 
-    cart: (req, res) => {
-    res.render('cart');
-},
+
 
 // Logout
 

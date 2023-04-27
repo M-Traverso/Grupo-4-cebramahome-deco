@@ -125,12 +125,18 @@ body {
     display: flex;
 }
 
-
+span{
+    display: block;
+    font-size: 7px;
+    color:white;
+    background-color: rgb(255, 119, 0);
+    text-align: center;
+    border-radius: 50%;
+}
 .header-nav a {
     text-decoration: none;
     color: #222222;
     display: inline-block;
-    padding: 5px 0;
     font-size: 7px;
     margin: 0 1px;
     margin-right: 15px;
@@ -325,6 +331,7 @@ main {
 .imgarticle img {
     width: 100%;
     height: 35vh;
+    object-fit: contain;
 }
 
 .divcontodaladescripcion {
@@ -366,8 +373,12 @@ main {
     transition: all 1000ms;
 }
 
-.div-precio-carrito i :hover {
+.div-precio-carrito i:hover {
     transform: rotatez(360deg)
+}
+
+.pid{
+    display: none;
 }
 
 
@@ -456,7 +467,6 @@ footer {
 
     .header-nav a {
         font-size: 13px;
-        margin: 0 4px;
     }
 
     .burguermenuparacelus {
