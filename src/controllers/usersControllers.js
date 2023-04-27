@@ -68,7 +68,6 @@ const usersController = {
         });
 
     } else {
-        console.log(errors)
         res.render(path.join(__dirname, ('../../views/register.ejs')), { errors: errors.mapped(), old: req.body });
     }
 
