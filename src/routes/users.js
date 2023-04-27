@@ -7,6 +7,7 @@ const authtMiddleware = require('../../middlewares/authMiddleware');
 const usersController = require('../controllers/usersControllers');
 const userlogged = require('../../middlewares/userlogged');
 
+
 //configurando storage
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
@@ -24,10 +25,10 @@ const routerUsers = express.Router();
 
 
 const validateRegister = [
-    check('firstName').notEmpty().withMessage('introduzca su nombre'),
+    check('firstName').notEmpty().withMessage('introduzca su nombre').isLength({min:2}).withMessage('debe tener al menos 2 caracteres'),
     check('email').notEmpty().withMessage('introduzca su correo electronico').bail().isEmail().withMessage('introduzca un formato de correo valido'),
-    check('password').notEmpty().withMessage('introduzca su contraseña'),
-    check('lastName').notEmpty().withMessage('introduzca su apellido'),
+    check('password').notEmpty().withMessage('introduzca su contraseña').isLength({min:8}).withMessage('debe tener al menos 8 caracteres'),
+    check('lastName').notEmpty().withMessage('introduzca su apellido').isLength({min:2}).withMessage('debe tener al menos 2 caracteres'),
     check('image').custom((value, { req }) => {
 
         let file = req.file;
@@ -57,6 +58,8 @@ routerUsers.post('/register', upload.single('image'), validateRegister, usersCon
 
 routerUsers.get('/login', guestMiddleware, usersController.login);
 routerUsers.post('/login', usersController.loginpost);
+
+// routerUsers.get('/cart', authtMiddleware, usersController.cart);
 
 // Logout
 
