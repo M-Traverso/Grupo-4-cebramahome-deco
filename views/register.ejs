@@ -58,7 +58,7 @@
                 </div>
                 <div>
                     <label for="contraseña">contraseña :</label>
-                    <input type="password" name="password" id="contraseña"  class="form-input"  value="<%= locals.old ? old.password : null %>">
+                    <input type="password" name="password" id="password"  class="form-input"  value="<%= locals.old ? old.password : null %>">
                     <% if ( locals.errors && errors.password) { %>
                         <div class="tomato">
                             <%= errors.password.msg %>
@@ -75,7 +75,7 @@
                         <% } %>
                 </div>
                 <div class="divconboton">
-                    <button type="submit"> continuar </button>
+                    <button type="submit" id="buttonContinued"> continuar </button>
                 </div>
             </form>
             <div class="divpararevisar">

@@ -79,6 +79,9 @@ label{
     align-items: center;
     position: relative;
 }
+.tomato{
+    color: tomato;
+}
 
 @media (min-width:375px) {
     .create-form{
