@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,41 +14,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Ingresar</title>
 </head>
+
 <body>
     <!-- Header Section -->
 
-    <%- include('./partials/headerSection')  %>
+    <%- include('./partials/headerSection') %>
 
-    <main>
-        <form action="/login" method="POST" class="create-form" >
-            <ul class="errores" id="errores"></ul>
-            <div class="control-form">
-                <label>Ingresa tu email:</label>
-                <input type="email" name="email" class="control" id="email"></input>
-                <% if (locals.errors && errors.email) {%>
-                    <div class="text-danger">
-                        <p><%= errors.email.msg%></p>
-                    </div>
-                    <% } %>
-            </div>
-            <div class="control-form">
-                <label>Ingresa tu contraseña</label>
-                <input type="password" name="password" class="control" id="password"></input>
-            </div>
-            <div class="control-form">
-                <div class="form-group form-check">
-                    <label>
-                        <input type="checkbox" name="remember_user">Recordar mi usuario
-                    </label>
+        <main>
+
+
+            <form action="/login" method="POST" class="create-form" id="form">
+
+                <ul class="errores" id="errores"></ul>
+
+                <div class="control-form">
+                    <label>Ingresa tu email:</label>
+                    <input type="email" name="email" class="control" id="email"></input>
+                    <% if (locals.errors && errors.email) {%>
+                        <div class="text-danger">
+                            <p>
+                                <%= errors.email.msg%>
+                            </p>
+                        </div>
+                        <% } %>
                 </div>
-            </div>
-            <button type="submit" class="button-login" id="button-submit">Ingresar</button>
-        </form>    
-    </main>
+                <div class="control-form">
+                    <label>Ingresa tu contraseña</label>
+                    <input type="password" name="password" class="control" id="password"></input>
+                </div>
+                <div class="control-form">
+                    <div class="form-group form-check">
+                        <label>
+                            <input type="checkbox" name="remember_user">Recordar mi usuario
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="button-login" id="button-submit">Ingresar</button>
+            </form>
+        </main>
 
-    <!-- Footer Section -->
+        <!-- Footer Section -->
 
-    <%- include('./partials/footerSection')  %>
-    <script src="/js/login.js"></script>
+        <%- include('./partials/footerSection') %>
+            <script src="/js/login.js"></script>
 </body>
+
 </html>

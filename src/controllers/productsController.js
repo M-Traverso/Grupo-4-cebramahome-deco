@@ -29,6 +29,18 @@ const productsController = {
                 res.send(error);
             })
     },
+    productForSearch: (req, res) => {
+        const name = req.body.imputsearchnav
+        db.Products.findOne({
+            where: { name: { [Op.like]: `%${name}%` } }
+        })
+            .then(oneproduct => {
+                res.render(path.join(__dirname, ('../../views/productdetail.ejs')), { 'oneproduct': oneproduct })
+            })
+            .catch((error) => {
+                res.send(error);
+            })
+    },
     productsbycategory: (req, res) => {
         db.Products.findAll({
             where: { category_id: req.params.id }

@@ -1,57 +1,59 @@
 window.addEventListener('load', function () {
 
     let formulario = document.querySelector('#form');
-
-    formulario.addEventListener("submit", function(e){
+  
+    formulario.addEventListener("submit", function (e) {
 
         let errores = [];
 
+
         let campoNombre = document.querySelector("#firstName");
 
-        if(campoNombre.value.length == 0){
-            errores.push("El nombre de usuario es obligatoria");
-        }else if(campoNombre.value.length >= 2){
+        if (campoNombre.value.length == 0) {
+            errores.push("El nombre de usuario es obligatorio");
+        } else if (campoNombre.value.length >= 2) {
             errores.push('El nombre de usuario debe contener al menos dos caracteres');
         }
 
         let campoApellido = document.querySelector("#lastName");
 
-        if(campoApellido.value.length == 0){
-            errores.push("El apellido de usuario es obligatoria");
-        }else if(campoApellido.value.length >= 2){
+        if (campoApellido.value.length == 0) {
+            errores.push("El apellido de usuario es obligatorio");
+        } else if (campoApellido.value.length >= 2) {
             errores.push('El apellido de usuario debe contener al menos dos caracteres');
         }
-        
+
         let campoEmail = document.querySelector("#mail");
 
         const regex = '/^[^\s@]+@[^\s@]+\.[^\s@]+$/'
-    
-        if(campoEmail.value.length == 0){
-            errores.push("La direccion de correo electronico es obligatoria");
-        }else if(!regex.test(campoEmail.value)){
+
+        if (campoEmail.value.length == 0) {
+            errores.push("La direccion de correo electronico es obligatorio");
+        } else if (!regex.test(campoEmail.value)) {
             errores.push('El correo electrónico que ingresaste es inválido');
         }
 
         let campoPassword = document.querySelector("#password");
         const regexx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).+$/;
-    
-        if(campoPassword.value.length == 0){
+
+        if (campoPassword.value.length == 0) {
             errores.push("Debes ingresar una contraseña");
-        }else if(campoPassword.value.length >= 8){
-            errores.push('El apellido de usuario debe contener al menos dos caracteres');            
-        }else if(!regexx.test(campoPassword.value)){
+        } else if (campoPassword.value.length >= 8) {
+            errores.push('El apellido de usuario debe contener al menos dos caracteres');
+        } else if (!regexx.test(campoPassword.value)) {
             errores.push("La contraseña deberá tener letras mayúsculas, minúsculas, un número y un carácter especial")
         }
 
         let campoImg = document.querySelector("#imagen");
         const regexxx = /^image\/(jpeg|png|gif|webp)$/;
 
-        if(campoImg.files.length == 0){
+        if (campoImg.files.length == 0) {
             errores.push("Debes cargar una imagen")
-        }else if(!regexxx.test(campoImg.files[0])){
+        } else if (!regexxx.test(campoImg.files[0])) {
             errores.push("Debes ingresar alguno de los siguientes formatos: (jpeg|png|gif|webp)")
         }
 
+<<<<<<< HEAD
         console.log(errores)
 
     
@@ -65,15 +67,29 @@ window.addEventListener('load', function () {
     
                 ulErrores.innerHTML +=  `<li> ${errores[i]} </li>`
                 ulErrores.classList.add("is-invalid")
+=======
+
+        if (errores.length > 0) {
+            e.preventDefault()
+            let ulErrores = document.querySelector("#errores");
+
+            for (let i = 0; i < errores.length; i++) {
+
+                ulErrores.innerHTML += `<li> ${errores[i]} </li>`
+>>>>>>> 623bfccc34fb8dac530752e167892548c7b0cd12
                 ulErrores.style.listStyle = "none"
-                ulErrores.classList.add("alert-warning")
-    
+                ulErrores.classList.add("tomato")
+
             }
-    
+
+
+
+        } else {
+            formulario.submit()
         }
-        
-    
-       })
+
+
+    })
 
 
 
