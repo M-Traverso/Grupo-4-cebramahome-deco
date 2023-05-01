@@ -53,21 +53,6 @@ window.addEventListener('load', function () {
             errores.push("Debes ingresar alguno de los siguientes formatos: (jpeg|png|gif|webp)")
         }
 
-<<<<<<< HEAD
-        console.log(errores)
-
-    
-        if (errores.length > 0){
-    
-            e.preventDefault();
-    
-            let ulErrores = document.querySelector("ul");
-    
-            for (let i = 0; i < errores.length; i++){
-    
-                ulErrores.innerHTML +=  `<li> ${errores[i]} </li>`
-                ulErrores.classList.add("is-invalid")
-=======
 
         if (errores.length > 0) {
             e.preventDefault()
@@ -76,7 +61,6 @@ window.addEventListener('load', function () {
             for (let i = 0; i < errores.length; i++) {
 
                 ulErrores.innerHTML += `<li> ${errores[i]} </li>`
->>>>>>> 623bfccc34fb8dac530752e167892548c7b0cd12
                 ulErrores.style.listStyle = "none"
                 ulErrores.classList.add("tomato")
 
