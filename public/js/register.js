@@ -52,6 +52,8 @@ window.addEventListener('load', function () {
             errores.push("Debes ingresar alguno de los siguientes formatos: (jpeg|png|gif|webp)")
         }
 
+        console.log(errores)
+
     
         if (errores.length > 0){
     

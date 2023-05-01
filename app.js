@@ -10,11 +10,13 @@ const routerUsers = require('./src/routes/users');
 const routerProducts = require('./src/routes/products');
 const db= require('./src/database/models');
 const routesapisales=require('./src/api/routes/routesapisales');
+const routerAPIUsers=require('./src/api/routes/users');
 const port = process.env.PORT || 8080;
 
 const app= express();
 
 app.use(express.urlencoded({extended:false}));
+app.use(express.json())
 app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.static('public'));
@@ -31,6 +33,7 @@ app.use(routerMain);
 app.use(routerProducts);
 app.use(routerUsers);
 app.use('/api/sales',routesapisales);
+app.use('/api',routerAPIUsers);
 
 
 db.sequelize.authenticate()
