@@ -26,9 +26,10 @@
                     <i class="fa-solid fa-user">  registrarse</i>
                 </section>
             </header>
+            <ul class="errores" id="errores"></ul>
 
             <form action="/register" method="POST" enctype="multipart/form-data" id="form" >
-                <ul class="errores" id="errores"></ul>
+                
                 <div>
                     <label for="usuario">Nombre:</label>
                     <input type="text" name="firstName" id="firstName" class="form-input"  value="<%= locals.old ? old.firstName : null %>">
@@ -87,6 +88,6 @@
     <!-- Footer Section -->
 
     <%- include('./partials/footerSection')  %>
-    <script src="/js/register.js"></script>    
+    <script src="/js/register.js"></script>     
 </body>
 </html>
