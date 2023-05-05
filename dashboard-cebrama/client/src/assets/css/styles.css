@@ -1,0 +1,10 @@
+.body{
+    background-color:#E9E3E6;
+}
+.object{
+    object-fit: contain;
+}
+.margin{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
