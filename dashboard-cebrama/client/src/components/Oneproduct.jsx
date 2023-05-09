@@ -33,15 +33,18 @@ function Oneproduct() {
 
     return (
         <>
-            
-                <div className="col-12 margin">
-                    <Card
-                        image={data.image}
-                        description={data.name}
-                    />
-                    
-                </div>
-            
+            <div className="container">
+                <h1>{data.name}</h1>
+            </div>
+
+            <div className="col-12 margin">
+                <Card
+                    image={data.image}
+                    description={data.name}
+                />
+
+            </div>
+
         </>
     )
 }
