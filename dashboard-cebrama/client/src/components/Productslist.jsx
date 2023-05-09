@@ -2,18 +2,39 @@ import React from 'react'
 import Listproducts from './Listproducts'
 import { useState, useEffect } from 'react';
 function Productslist() {
-    const [product, setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [pagina, setPagina] = useState(1)
+
     useEffect(() => {
-        fetch('http://localhost:3001/api/products/')
+        fetch(`http://localhost:3001/api/products/page/${pagina}`)
             .then(response => response.json())
             .then(data => {
-
                 setProducts(data.data);
-
             })
             .catch(error => { console.error(error) });
 
     }, [])
+    const nextpage = async () => {
+        await setPagina(pagina + 1)
+        fetch(`http://localhost:3001/api/products/page/${pagina + 1}`)
+            .then(response => response.json())
+            .then(data => {
+                setProducts(data.data);
+            })
+            .catch(error => { console.error(error) });
+    }
+
+    const previouspage = async () => {
+        if (pagina > 1) {
+            await setPagina(pagina - 1)
+            fetch(`http://localhost:3001/api/products/page/${pagina - 1}`)
+                .then(response => response.json())
+                .then(data => {
+                    setProducts(data.data);
+                })
+                .catch(error => { console.error(error) });
+        }
+    }
     return (
         <>
             <div className='row'>
@@ -37,13 +58,13 @@ function Productslist() {
                             </thead>
                             <tbody>
                                 {
-                                    product.map((element, i) => {
+                                    products.map((element, i) => {
                                         return (
                                             <Listproducts
                                                 key={element + i}
                                                 id={element.id}
                                                 name={element.name}
-                                                categoria={element.category.name}
+                                                categoria={element.Categories.name}
                                                 descripcion={element.description}
 
                                             />
@@ -53,6 +74,12 @@ function Productslist() {
 
                             </tbody>
                         </table>
+                    </div>
+                </div>
+                <div className='container'>
+                    <div className='row justify-content-between'>
+                        <button type="button" className="btn btn-outline-dark" onClick={() => previouspage()}>Previous-Page</button>
+                        <button type="button" className="btn btn-outline-dark" onClick={() => nextpage()}>Next-Page</button>
                     </div>
                 </div>
             </div>

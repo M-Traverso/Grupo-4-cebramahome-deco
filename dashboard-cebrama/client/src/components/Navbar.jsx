@@ -9,10 +9,11 @@ function Navbar() {
   const history = useNavigate();
 
   const call = (event) => {
+
     event.preventDefault();
     const info = input.current.value
     history(`/search?name=${encodeURIComponent(info)}`);
-    input.current.innerText=""
+    input.current.value = ""
 
   }
 

@@ -18,6 +18,7 @@ function Categories() {
     }, [])
   return (
     <>
+    
      <div className="col-lg-6 mb-4" style={{ marginLeft: 10 + 'px' }}>
                     <div className="card shadow mb-4">
                         <div className="card-header py-3">

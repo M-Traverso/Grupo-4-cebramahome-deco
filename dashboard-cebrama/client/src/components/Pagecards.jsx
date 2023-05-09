@@ -41,6 +41,9 @@ function Pagecards() {
 
     return (
         <>
+         <div className="container">
+            <h1>All The Products In Data Base</h1>
+        </div>
             {products.length === 0 && <div className="d-flex justify-content-center">
                 <div className="spinner-border" role="status">
                     <span className="visually-hidden"></span>
