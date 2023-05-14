@@ -3,14 +3,16 @@ const path = require('path');
 const app = express();
 const db= require('../database/models');
 
-const routesApi=require('./routes/productsRoutes');
+const routesApiproducts=require('./routes/productsRoutes');
+const routesApiusers=require('./routes/usersRoutes');
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   next();
 });
 
-app.use('/api/products',routesApi)
-
+app.use('/api/products',routesApiproducts)
+app.use('/api/users',routesApiusers)
 
 
 db.sequelize.authenticate()

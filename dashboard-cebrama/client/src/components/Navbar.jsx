@@ -39,6 +39,9 @@ function Navbar() {
                 <Link className="nav-link" to={'/list'}>TableProducts</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to={'/userslist'}>TableUsers</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to={'/lastproduct'}>LastProduct</Link>
               </li>
               <li className="nav-item dropdown">
