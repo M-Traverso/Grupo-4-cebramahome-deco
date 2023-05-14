@@ -26,6 +26,23 @@ function Detail() {
             .catch(error => { console.error(error) });
 
     }, [])
+    const [userdata,setuserdata] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:3001/api/users')
+            .then(response => response.json())
+            .then(data => {
+                let users = {
+                    title: 'usuarios',
+                    length: data.count,
+                    go:'Users',
+                    link:'/list'
+                }
+                let datos = [users]
+                setuserdata(datos);
+            })
+            .catch(error => { console.error(error) });
+
+    }, [])
     return (
         <div className='row'>
             {
@@ -41,7 +58,21 @@ function Detail() {
                     )
                 })
             }
+            {
+                userdata.map((element, i) => {
+                    return(
+                    <Smallcard
+                        key={i}
+                        title={element.title}
+                        length={element.length}
+                        go={element.go}
+                        link={element.link}
+                    />
+                    )
+                })
+            }
         </div>
+        
     )
 }
 
