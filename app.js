@@ -11,6 +11,8 @@ const routerProducts = require('./src/routes/products');
 const db= require('./src/database/models');
 const routesapisales=require('./src/api/routes/routesapisales');
 const routerAPIUsers=require('./src/api/routes/users');
+const routesapiemail=require('./src/api/routes/routesapiemailalert');
+
 const port = process.env.PORT || 8080;
 
 const app= express();
@@ -34,6 +36,7 @@ app.use(routerProducts);
 app.use(routerUsers);
 app.use('/api/sales',routesapisales);
 app.use('/api',routerAPIUsers);
+app.use('/api/email',routesapiemail);
 
 
 db.sequelize.authenticate()
