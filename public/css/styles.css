@@ -169,8 +169,6 @@ main {
 
 
 .secctionconsearchnav {
-
-    margin-top: 23px;
     display: none;
     text-align: center;
     flex: 0 0 100%;
@@ -197,7 +195,7 @@ main {
     text-decoration: none;
     color: #222222;
     margin: auto;
-    font-size: 7px;
+    font-size: 10px;
 }
 
 .divconnav button {
@@ -222,9 +220,7 @@ main {
     padding-top: 10px;
 }
 
-#contemitemscarrousel {
-    height: 100px;
-    overflow: hidden;
+.contain{
     margin-bottom: 30px;
     text-align: center;
     background-color: transparent;
@@ -233,32 +229,48 @@ main {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-.itemcarrousel {
-    position: relative;
-    height: 100px;
-
-}
-
-.tarjetacarrousel img {
-    height: 105px;
-}
-
-.flechascarrousel {
-    position: absolute;
-    top: 0;
-    height: 100%;
+.carr {
     width: 100%;
+    text-align: center;
+}
+
+.grande {
+    width:100%;
+  
+ }
+
+ .grande img {
+
+    width:94%;
+    margin: auto;
+    object-fit: contain;
+   
+}
+#img2{
+    display: none;
+}
+#img3{
+    display: none;
+}
+.activo{
+   color: orange;
+}
+.puntos {
+    width: 100%;
+    margin: 10px; 
+    padding: 0px;
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px;
 }
 
-.flechascarrousel a {
-    text-decoration: none;
-    color: black;
+.punto {
+    width: 2em;
+    height: 1em;
+    margin: 1em 1em 0;
+    
 }
-
 .imgarticle {
     background-color: transparent;
     filter: brightness(1.1);
@@ -443,7 +455,11 @@ footer {
 
 .divconh5ydiv .emailbar {
     width: 17vw;
-    height: 2vh;
+    height: 3vh;
+}
+
+.buttonsubmit{
+    height: 3vh;
 }
 
 .text-danger{
@@ -522,6 +538,13 @@ footer {
     }
     .imgarticle img{
         height: 13vh;
+    }
+    .grande img{
+        width: 40%;
+    }
+    .punto {
+        width: 6em;
+        font-size: 23px;
     }
 }
 
