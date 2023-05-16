@@ -18,6 +18,9 @@
 <body>
     <%- include('./partials/headerSection') %>
         <main>
+            <div id="content">
+                <a id="fixed-button" href="/products/create"> crear <br> producto</a>
+            </div>
             <section class="section-product">
                 <div class="div-todo">
                     <div class="div-h2-main">
@@ -26,26 +29,36 @@
 
                     <% for(let i=0; i < productos.length; i++) {%>
                         <article class="article-productos">
-                            <div class="infodetail">
-                                <a href="/product/<%=productos[i].id %>">
-                                    <figure class="imgarticle">
-                                        <img src=/img/<%=productos[i].image %> alt="">
-                                    </figure>
-                                    <div class="divcontodaladescripcion">
-                                        <h2>
-                                            <%= productos[i].name %>
-                                        </h2>
-                                    </div>
-                                    <div class="div-precio-carrito">
-                                        <p>
-                                            $<%= productos[i].price %>
-                                        </p>
-                                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                                    </div>
-                                </a>
-                            </div>
+                            <% if (locals.isLogged) { %>
+                                <p id="userid" class="pid">
+                                    <%= locals.userLogged.id %>
+                                </p>
+                                <%} else {%>
+                                    <p id="userid" class="pid"></p>
+                                    <%}%>
+                                        <div class="infodetail">
+                                            <a href="/product/<%=productos[i].id %> ">
+                                                <figure class="imgarticle">
+                                                    <img id="img-src" src=/img/<%=productos[i].image %> alt="">
+                                                </figure>
+                                                <div class="divcontodaladescripcion">
+                                                    <h2 class="titledescription">
+                                                        <%= productos[i].name %>
+                                                    </h2>
+                                                </div>
+                                                <div class="div-precio-carrito">
+                                                    <p id="pid" class="pid">
+                                                        <%= productos[i].id %>
+                                                    </p>
+                                                    <p id="price">
+                                                        $<%= productos[i].price %>
+                                                    </p>
+                                                    <a id="button-cartt"><i class="fa-solid fa-cart-shopping jump-button"></i></a>
+                                                </div>
+                                            </a>
+                                        </div>
                         </article>
-                     <%}%>
+                        <%}%>
 
                 </div>
             </section>
@@ -53,8 +66,9 @@
         </main>
 
         <%- include('./partials/footerSection') %>
-        <script src="/js/cart.js"></script>
-        <script src="/js/emailalerts.js"></script>
+            <script src="/js/cart.js"></script>
+            <script src="/js/emailalerts.js"></script>
+            <script src="/js/admin.js"></script>
 </body>
 
 </html>

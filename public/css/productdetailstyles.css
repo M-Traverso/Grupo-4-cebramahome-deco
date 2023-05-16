@@ -149,8 +149,11 @@ body {
     border-radius: 8px;
     border: none;
     margin-bottom: 15px;
+    transition: background-color 0.3s ease;
 }
-
+.button-buy:hover{
+    background-color: green;
+}
 .button-edit {
     background-color: #9a9b6881;
     border: none;

@@ -37,7 +37,7 @@ routerMain.post('/products/create', upload.single('image'),validate, productsCon
 routerMain.get('/products/:id/edit',authtMiddleware,adminMiddleware, productsController.productEdit);
 routerMain.put('/products/:id/edit',upload.single('image'),validate,productsController.productUpdate);
 
-routerMain.delete('/products/:id',authtMiddleware,adminMiddleware, productsController.productDestroy); 
+routerMain.delete('/products/:id',authtMiddleware,adminMiddleware, productsController.productSoftDelete); 
 
 
 module.exports = routerMain;

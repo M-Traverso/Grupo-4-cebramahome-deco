@@ -66,12 +66,12 @@ body {
     border-radius: 400px;
 }
 
-.main-searchbar{
+.main-searchbar {
     flex-grow: 1;
     text-align: center;
 }
 
-.searchbar{    
+.searchbar {
     display: block;
     display: flex;
     justify-content: space-between;
@@ -83,17 +83,17 @@ body {
     box-shadow: 0px 0px 7px rgb(105, 105, 105);
 }
 
-.input{
+.input {
     width: 85%;
     background-color: #ebebeb;
     border: none;
 }
 
-.fa-magnifying-glass{
+.fa-magnifying-glass {
     font-size: 80%;
     text-align: center;
     background-color: #ebebeb;
-    border-left: solid rgba(102,102,102,0.4) 2px;
+    border-left: solid rgba(102, 102, 102, 0.4) 2px;
     margin: 0px;
     padding: 4px;
 }
@@ -125,14 +125,15 @@ body {
     display: flex;
 }
 
-span{
+span {
     display: block;
     font-size: 7px;
-    color:white;
+    color: white;
     background-color: rgb(255, 119, 0);
     text-align: center;
     border-radius: 50%;
 }
+
 .header-nav a {
     text-decoration: none;
     color: #222222;
@@ -220,7 +221,7 @@ main {
     padding-top: 10px;
 }
 
-.contain{
+.contain {
     margin-bottom: 30px;
     text-align: center;
     background-color: transparent;
@@ -235,29 +236,33 @@ main {
 }
 
 .grande {
-    width:100%;
-  
- }
+    width: 100%;
 
- .grande img {
+}
 
-    width:94%;
+.grande img {
+
+    width: 94%;
     margin: auto;
     object-fit: contain;
-   
+
 }
-#img2{
+
+#img2 {
     display: none;
 }
-#img3{
+
+#img3 {
     display: none;
 }
-.activo{
-   color: orange;
+
+.activo {
+    color: orange;
 }
+
 .puntos {
     width: 100%;
-    margin: 10px; 
+    margin: 10px;
     padding: 0px;
     display: flex;
     flex-flow: row nowrap;
@@ -269,8 +274,9 @@ main {
     width: 2em;
     height: 1em;
     margin: 1em 1em 0;
-    
+
 }
+
 .imgarticle {
     background-color: transparent;
     filter: brightness(1.1);
@@ -308,7 +314,8 @@ main {
 .headerdelsectiondelmain h2:hover {
     color: #9B7E68;
 }
-.space{
+
+.space {
     justify-content: space-between;
 }
 
@@ -365,6 +372,9 @@ main {
     font-size: 2.4em;
     font-weight: 300;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .div-precio-carrito {
@@ -381,15 +391,15 @@ main {
 
 .div-precio-carrito i {
     margin: 5px;
-    color: black;
-    transition: all 1000ms;
+    color:rgb(109, 80, 255);
+    transition: color 0.3s ease;
 }
 
 .div-precio-carrito i:hover {
-    transform: rotatez(360deg)
+   color:green;
 }
 
-.pid{
+.pid {
     display: none;
 }
 
@@ -413,7 +423,7 @@ footer {
     max-width: 35%;
     width: 100%;
     margin-top: 13px;
-   
+
 }
 
 .sectiondelfooter-2 {
@@ -426,6 +436,7 @@ footer {
 
 .searchbarfooter {
     margin-left: 10px;
+    display: contents;
 }
 
 .divprincipal {
@@ -446,6 +457,8 @@ footer {
     display: block;
     margin-top: 12px;
     text-align: center;
+    text-decoration: none;
+    color: black;
 }
 
 .divconh5ydiv {
@@ -458,13 +471,66 @@ footer {
     height: 3vh;
 }
 
-.buttonsubmit{
+.buttonsubmit {
     height: 3vh;
 }
 
-.text-danger{
+.text-danger {
     color: red;
 }
+
+#fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 37%;
+    border: none;
+    background-color: rgb(109, 80, 255);
+    color: white;
+    font-family: "American Typewriter";
+    text-decoration: none;
+    z-index: 9999;
+    transition: background-color 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+
+
+#fixed-button:hover {
+    background-color: #457da0;
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .jump-button {
+    position: relative;
+    animation: jump 0.5s infinite;
+  }
+  
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
 
 @media (min-width:600px) {
     .div-contenedor {
@@ -513,7 +579,8 @@ footer {
         flex: 0 0 45%;
         max-width: 45%;
     }
-    .imgarticle img{
+
+    .imgarticle img {
         height: 13vh;
     }
 
@@ -536,12 +603,15 @@ footer {
     .div-todo {
         max-width: 720px;
     }
-    .imgarticle img{
+
+    .imgarticle img {
         height: 13vh;
     }
-    .grande img{
+
+    .grande img {
         width: 40%;
     }
+
     .punto {
         width: 6em;
         font-size: 23px;
@@ -612,8 +682,10 @@ footer {
     .article-productos {
         flex: 0 0 25%;
         max-width: 25%;
+        margin-left: 10px;
     }
-    .space{
+
+    .space {
         justify-content: center;
     }
 

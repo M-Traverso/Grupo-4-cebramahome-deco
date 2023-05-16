@@ -23,6 +23,9 @@
         <main>
             <div class="div-todo">
                 <div class="div-all">
+                    <div id="content">
+                        <a id="fixed-button" href="/products/create"> crear <br> producto</a>
+                    </div>
                     <section class="sectionmainconcarrousel div-tranform">
                         <div class="contain">
                             <div class="row">
@@ -97,7 +100,7 @@
                                                                 $<%= productos[i].price %>
                                                             </p>
                                                             <a id="button-cartt"><i
-                                                                    class="fa-solid fa-cart-shopping"></i></a>
+                                                                    class="fa-solid fa-cart-shopping jump-button"></i></a>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -118,6 +121,7 @@
 
         <%- include('./partials/footerSection') %>
             <script src="/js/logged.js"></script>
+            <script src="/js/admin.js"></script>
             <script src="/js/cart.js"></script>
             <script src="/js/carrousel.js"></script>
             <script src="/js/categorieslist.js"></script>
