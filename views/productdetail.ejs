@@ -19,6 +19,9 @@
 
   <%- include('./partials/headerSection') %>
     <main>
+      <div id="content">
+        <a id="fixed-button" href="/products/create"> crear <br> producto</a>
+      </div>
       <div class="div-h2-main">
         <h2>
           <%= oneproduct.name %>
@@ -54,8 +57,9 @@
                     <%= oneproduct.id %>
                   </p>
                   <a id="button-cartts" class="button-buy">comprar</a>
-                  <a href="/products/<%= oneproduct.id %>/edit" class="button-edit">editar</a>
-                  <form action="/products/<%= oneproduct.id %>?_method=DELETE" method="POST" class="form-delete">
+                  <a href="/products/<%= oneproduct.id %>/edit" id="button-update" class="button-edit">editar</a>
+                  <form action="/products/<%= oneproduct.id %>?_method=DELETE" id="form-delete" method="POST"
+                    class="form-delete">
                     <button type="submit" class="button-delete">eliminar</button>
                   </form>
                 </div>
@@ -69,6 +73,7 @@
     <%- include('./partials/footerSection') %>
       <script src="/js/cart.js"></script>
       <script src="/js/emailalerts.js"></script>
+      <script src="/js/admin.js"></script>
 </body>
 
 </html>

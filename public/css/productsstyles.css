@@ -115,12 +115,12 @@ body {
 
 .div-precio-carrito i {
     margin: 5px;
-    color: black;
-    transition: all 1000ms;
+    color: rgb(109, 80, 255);
+    transition: color 0.3s ease;
 }
 
 .div-precio-carrito i:hover {
-    transform: rotatez(360deg)
+    color:green;
 }
 
 

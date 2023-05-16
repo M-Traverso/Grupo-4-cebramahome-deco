@@ -2,6 +2,7 @@
 
 
     let buttons = document.querySelectorAll('#button-cartt');
+    let buttoncreate = document.querySelector('#content')
   let user=localStorage.getItem('user');
   console.log(localStorage);
     if (!user) {
@@ -12,5 +13,6 @@
                 alert('el usuario no esta logueado');
             })
         }
+        buttoncreate.style.display = 'none';
     } 
 
