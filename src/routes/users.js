@@ -6,6 +6,7 @@ const guestMiddleware = require('../../middlewares/guestMiddleware');
 const authtMiddleware = require('../../middlewares/authMiddleware');
 const usersController = require('../controllers/usersControllers');
 const userlogged = require('../../middlewares/userlogged');
+const adminMiddleware = require('../../middlewares/adminMiddleware');
 
 
 //configurando storage
@@ -46,6 +47,11 @@ const validateRegister = [
 
     })
 ]
+
+// const validateLogin = [
+//     check('email').notEmpty().withMessage('introduzca su correo electronico').bail().isEmail().withMessage('introduzca un formato de correo valido'),
+//     check('password').notEmpty().withMessage('introduzca su contraseña').isLength({min:8}).withMessage('debe tener al menos 8 caracteres'),
+// ]
 
 
 routerUsers.get('/user/:id', usersController.detail);
