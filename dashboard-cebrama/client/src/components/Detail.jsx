@@ -35,7 +35,7 @@ function Detail() {
                     title: 'usuarios',
                     length: data.count,
                     go:'Users',
-                    link:'/list'
+                    link:'/userslist'
                 }
                 let datos = [users]
                 setuserdata(datos);

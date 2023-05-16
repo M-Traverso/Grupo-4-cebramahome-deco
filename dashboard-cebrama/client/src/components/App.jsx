@@ -18,7 +18,7 @@ function App() {
     <>
       <Navbar />
       <div className="container">
-        <div className="row justify-content-center" style={{ margin: 20 + 'px' }}>
+        <div className="row justify-content-center">
           <Routes>
             <Route exact path='/' element={<Content />} />
             <Route exact path='/page/:id' element={<Pagecards />} />
