@@ -1,5 +1,6 @@
 import React from 'react'
 import Lastproduct from './Lastproduct'
+import LastUser from './LastUser'
 import Productslist from './Productslist'
 import Userslist from './UsersList'
 import Categories from './Categories'
@@ -18,6 +19,9 @@ function content() {
         </div>
         <div className='row justify-content-center' style={{ margin: 10 + 'px' }}>
           <Lastproduct />
+          <LastUser />
+        </div>
+        <div className='row justify-content-center' style={{ margin: 10 + 'px' }}>
           <Categories />
         </div>
         <div className='row justify-content-center'>

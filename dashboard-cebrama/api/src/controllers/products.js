@@ -56,6 +56,23 @@ const productsControllers = {
             })
             .catch(err => { res.json(err) })
     },
+    newProduct: (req, res) => {
+        products.findOne({
+             order: [['id', 'DESC']],
+             include: [{ association: 'Categories' }],
+            })
+            .then(element => {
+                res.json({
+                    id: element.id,
+                    name: element.name,
+                    description: element.description,
+                    price: element.price,
+                    image: `/img/${element.image}`,
+                    category: [element.Categories]
+                });
+            })
+            .catch(err => { res.json(err) })
+    },
     page: (req, res) => {
         const page = parseInt(req.params.page) || 1;
         const perPage = 10;

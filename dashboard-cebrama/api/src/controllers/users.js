@@ -8,7 +8,6 @@ const moment = require('moment');
 //Aqui tienen otra forma de llamar a cada uno de los modelos
 const Users = db.User;
 //---------------------------
-//Dentro del actorsAPIController uso las dos forma de poder llamar a nuestros modelo
 //----------------------------------
 const usersAPIController = {
     list: (req, res) => {
@@ -22,18 +21,19 @@ const usersAPIController = {
                 })
             })
             .catch(err => { res.json(err) })
-    },
-    
+    },   
     detail: (req, res) => {
-        products.findByPk(req.params.id)
-            .then(data => {
+        Users.findOne({
+            order: [['id', 'DESC']]
+        })
+        .then(element => {
                 res.json({
                     id: element.id,
                     firstName: element.firstName,
                     lastName: element.lastName,
                     email: element.email,
                     password: element.password,
-                    avatar: `/avatar/${data.avatar}`
+                    avatar: `${element.avatar}`
                 });
             })
             .catch(err => { res.json(err) })
