@@ -42,8 +42,7 @@ function Userslist() {
             </div>
 
 
-            <div className="card shadow mb-4">
-                {/*<!-- PRODUCTS LIST -->*/}
+            <div className="card shadow mb-4 col-md-12">
 
                 <div className="card-body">
                     <div className="table-responsive">

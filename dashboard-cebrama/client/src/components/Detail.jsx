@@ -44,7 +44,7 @@ function Detail() {
 
     }, [])
     return (
-        <div className='row'>
+        <div className='row justify-content-center'>
             {
                 datas.map((element, i) => {
                     return(
