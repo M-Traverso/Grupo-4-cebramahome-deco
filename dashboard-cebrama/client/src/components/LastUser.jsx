@@ -18,7 +18,7 @@ function LastUser() {
     }, [])
     return (
         <>
-            <div className='row col-sm-12 col-md-6'style={{ marginLeft: 10 + 'px' }}>
+            <div className='row col-sm-12 col-md-5'style={{ margin: 8 + 'px' }}>
                 <div className="card d-block text-center" style={{ width: 30 + 'rem' }} >
                     <div className="card-header py-3">
                         <h5 className="m-0 font-weight-bold text-gray-800">Last User in Data Base</h5>
