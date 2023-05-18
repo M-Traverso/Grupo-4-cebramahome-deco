@@ -9,6 +9,7 @@ import Productslist from './Productslist'
 import Userslist from './UsersList'
 import Categories from './Categories'
 import Lastproduct from './Lastproduct'
+import LastUser from './LastUser'
 import Notfound from './Notfound';
 import Oneproduct from './Oneproduct';
 function App() {
@@ -18,7 +19,7 @@ function App() {
     <>
       <Navbar />
       <div className="container">
-        <div className="row justify-content-center" style={{ margin: 20 + 'px' }}>
+        <div className="row justify-content-center">
           <Routes>
             <Route exact path='/' element={<Content />} />
             <Route exact path='/page/:id' element={<Pagecards />} />
@@ -26,6 +27,7 @@ function App() {
             <Route exact path='/userslist' element={<Userslist />} />
             <Route exact path='/categories' element={<Categories />} />
             <Route exact path='/lastproduct' element={<Lastproduct />} />
+            <Route exact path='/lastuser' element={<LastUser />} />
             <Route exact path='/search' element={<Oneproduct />} />
             <Route path='*' element={<Notfound />} />
           </Routes>

@@ -3,6 +3,7 @@ const multer= require('multer');
 const path= require('path');
 const authtMiddleware = require('../../middlewares/authMiddleware');
 const validate= require('../../middlewares/validation');
+const adminMiddleware = require('../../middlewares/adminMiddleware');
 
 const routerMain = express.Router();
 
@@ -27,16 +28,16 @@ routerMain.get('/products/category/:id', productsController.productsbycategory);
 
 routerMain.get('/search', productsController.productSearch);
 routerMain.post('/search', productsController.productForSearch);
-routerMain.get('/product/:id',authtMiddleware, productsController.productDetail);
+routerMain.get('/product/:id', productsController.productDetail);
 
 
-routerMain.get('/products/create',authtMiddleware, productsController.productCreate);
+routerMain.get('/products/create',authtMiddleware,adminMiddleware, productsController.productCreate);
 routerMain.post('/products/create', upload.single('image'),validate, productsController.productStore);
 
-routerMain.get('/products/:id/edit',authtMiddleware, productsController.productEdit);
+routerMain.get('/products/:id/edit',authtMiddleware,adminMiddleware, productsController.productEdit);
 routerMain.put('/products/:id/edit',upload.single('image'),validate,productsController.productUpdate);
 
-routerMain.delete('/products/:id', productsController.productDestroy); 
+routerMain.delete('/products/:id',authtMiddleware,adminMiddleware, productsController.productSoftDelete); 
 
 
 module.exports = routerMain;

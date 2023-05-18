@@ -18,6 +18,9 @@
 <body>
     <%- include('./partials/headerSection') %>
         <main>
+            <div id="content">
+                <a id="fixed-button" href="/products/create"> crear <br> producto</a>
+            </div>
             <section class="section-product">
                 <div class="div-todo">
                     <div class="div-h2-main">
@@ -50,7 +53,7 @@
                                                     <p id="price">
                                                         $<%= productos[i].price %>
                                                     </p>
-                                                    <a id="button-cartt"><i class="fa-solid fa-cart-shopping"></i></a>
+                                                    <a id="button-cartt"><i class="fa-solid fa-cart-shopping jump-button"></i></a>
                                                 </div>
                                             </a>
                                         </div>
@@ -63,8 +66,11 @@
         </main>
 
         <%- include('./partials/footerSection') %>
+            <script src="/js/admin.js"></script>
             <script src="/js/logged.js"></script>
             <script src="/js/cart.js"></script>
+            <script src="/js/emailalerts.js"></script>
+
 </body>
 
 </html>

@@ -35,7 +35,7 @@ function Detail() {
                     title: 'usuarios',
                     length: data.count,
                     go:'Users',
-                    link:'/list'
+                    link:'/userslist'
                 }
                 let datos = [users]
                 setuserdata(datos);
@@ -44,7 +44,7 @@ function Detail() {
 
     }, [])
     return (
-        <div className='row'>
+        <div className='row justify-content-center'>
             {
                 datas.map((element, i) => {
                     return(
