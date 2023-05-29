@@ -78,8 +78,8 @@ const usersController = {
    edit: (req, res) => {
 
     Users.findByPk(req.params.id)
-    .then((userToEdit) => {
-            res.render(path.join(__dirname, ('../../views/userEdit.ejs')), {userToEdit});
+    .then(userToEdit => {
+        res.render(path.join(__dirname, ('../../views/userEdit.ejs')), {userToEdit});
         })
         .catch((error) => {
             res.send(error);

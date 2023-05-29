@@ -35,7 +35,7 @@ app.use(routerMain);
 app.use(routerProducts);
 app.use(routerUsers);
 app.use('/api/sales',routesapisales);
-app.use('/api',routerAPIUsers);
+// app.use('/api',routerAPIUsers);
 app.use('/api/email',routesapiemail);
 
 
